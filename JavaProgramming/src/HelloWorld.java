@@ -1,5 +1,5 @@
 //클레스 선언부
-public class HellhWorld { //클래스클록
+public class HelloWorld { //클래스클록
 	//메소드 선언부
 	public static void main(String[] args) { //메소드 블록
 		// TODO Auto-generated method stub
@@ -11,6 +11,7 @@ public class HellhWorld { //클래스클록
 		
 		System.out.println("A");	
 		System.out.println("B");
+		System.out.println("C");
 	}
 
 }
