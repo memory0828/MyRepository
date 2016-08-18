@@ -15,8 +15,8 @@ public class VariableSize {
 		//System.out.println(b);
 		
 		int var5 = 200000;
-		char var6 = (char)var5;
-		System.out.println(var6);		
+		//char var6 = (char)var5;
+		//System.out.println(var6);		
 	}
 
 }
