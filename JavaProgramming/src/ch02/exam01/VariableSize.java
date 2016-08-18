@@ -11,8 +11,8 @@ public class VariableSize {
 		//byte var4 = var3;
 		
 		int x = 200;
-		byte b = (byte)x;
-		System.out.println(b);
+		//byte b = (byte)x;
+		//System.out.println(b);
 		
 		int var5 = 200000;
 		char var6 = (char)var5;
