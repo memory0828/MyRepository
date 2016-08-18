@@ -1,4 +1,4 @@
-package ch04.homework;
+﻿package ch04.homework;
 
 public class HomeWork2 {
 
@@ -19,7 +19,7 @@ public class HomeWork2 {
 		int y = 0; //y 변수 선언
 		int sam = 0; //방정식 계산 변수 선언
 	
-		//중첩 for문 없이 해당 결과값 얻기 기
+		//중첩 for문 없이 해당 결과값 얻기
 		for(x=1; x<=10; x++){
 			y = 1;
 			sam = 4*x + 5*y;
