@@ -28,6 +28,8 @@ public class WhileExample6 {
 				System.out.println("프로그램종료");
 			}
 		}
+		
+		
 	
 	}
 
