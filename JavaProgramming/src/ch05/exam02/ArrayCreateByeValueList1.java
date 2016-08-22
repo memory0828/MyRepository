@@ -1,4 +1,4 @@
-package cch05.exam02;
+package ch05.exam02;
 
 public class ArrayCreateByeValueList1 {
 

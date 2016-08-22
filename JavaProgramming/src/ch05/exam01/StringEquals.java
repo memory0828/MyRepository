@@ -1,4 +1,4 @@
-package cch05.exam01;
+package ch05.exam01;
 
 public class StringEquals {
 
