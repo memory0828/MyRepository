@@ -24,12 +24,12 @@ public class Board {
 		 */
 		
 		while(true){
-			System.out.println("===================================================================");
+			System.out.println("=====================================================================================");
 			System.out.println("\t■ 간이 게시판 Program ■");
 			System.out.println("\t| 1.목록 | 2.글쓰기 | 3.상세보기 | 4.수정하기 | 5.삭제하기 | 6종료 |");
 			System.out.println("\t\t▶ 데이터는 낭비공간없이 null 대상 저장 ◀");			
 			System.out.println("\t\t▶ 목록은 [번호]기준 오름차순 자동 정렬 ◀");
-			System.out.println("===================================================================");
+			System.out.println("=====================================================================================");
 			System.out.print("\t● 선택 : ");
 			String strMenuChoice = scan.nextLine();
 			if ( strMenuChoice.equals("1") ){
@@ -87,7 +87,7 @@ public class Board {
 					}
 				}
 				//해당 게시글이 존재안할경우 출력
-				if(sw==false) System.out.println("\t● Error : 입력한 게시글은 존재하지 않음");
+				if(sw==false) System.out.println("\t□ Error : 입력한 게시글은 존재하지 않음");
 				
 			}else if ( strMenuChoice.equals("4") ){
 				//===========
@@ -116,7 +116,7 @@ public class Board {
 					}
 				}
 				//해당 게시글이 존재안할경우 출력
-				if(sw==false) System.out.println("\t● Error : 지정된 게시글은 존재하지 않음");				
+				if(sw==false) System.out.println("\t□ Error : 지정된 게시글은 존재하지 않음");				
 				
 			}else if ( strMenuChoice.equals("5") ){
 				//===========
@@ -143,7 +143,7 @@ public class Board {
 					}
 				}
 				//해당 게시글이 존재안할경우 출력
-				if(sw==false) System.out.println("\t● Error : 지정된 게시글은 존재하지 않음");
+				if(sw==false) System.out.println("\t□ Error : 지정된 게시글은 존재하지 않음");
 				
 			}else if ( strMenuChoice.equals("6") ){
 				//===========
@@ -152,7 +152,7 @@ public class Board {
 				System.out.println("\t-----[프로그램 종료]");
 				break;
 			}else{
-				System.out.println("\t● Error : 1~6을 입력하세요");
+				System.out.println("\t□ Error : 1~6을 입력하세요");
 			} 
 			
 		}
@@ -163,9 +163,9 @@ public class Board {
 		//@@@@@@@@@@@@@@@@@@@@@@
 		//@  PrintList메소드 : 목록 출력
 		//@@@@@@@@@@@@@@@@@@@@@@
-		System.out.println("===================================================================");
+		System.out.println("=====================================================================================");
 		System.out.println("[번호]\t\t[제목]\t\t\t\t\t[글쓴이]\t[조회수]");
-		System.out.println("===================================================================");
+		System.out.println("=====================================================================================");
 
 		//번호순 오름차순 목록 표현(정렬기능 아님)
 		int intCnt = 0; //출력된 목록 카운터
@@ -175,7 +175,7 @@ public class Board {
 					System.out.print(" " + arr[0]); //번호
 					System.out.print("\t\t");
 					System.out.print(arr[1]); //제목
-					System.out.print("\t\t\t\t\t");
+					System.out.print("\t\t\t");
 					System.out.print(arr[2]); //글쓴이
 					System.out.print("\t\t");
 					System.out.println(arr[3]); //조회수
