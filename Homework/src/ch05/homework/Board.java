@@ -15,6 +15,8 @@ public class Board {
 		Scanner scan = new Scanner(System.in);
 		int intDBIndexCount = 1;	 				//데이터 세이브 카운터
 		String[][] strDB = new String[100][]; 	//데이터 저장
+		
+		int[][] intA = { {1,2,3},{4,5,6} };
 		/*
 		 * StrDB[0] = "번호" - index 코드
 		 * StrDB[1] = "제목"
@@ -23,9 +25,11 @@ public class Board {
 		 * StrDB[4] = "내용"
 		 */
 		
+		//처음 목록 출력
+		Board.PrintList(strDB, intDBIndexCount);
+		
 		while(true){
 			System.out.println("=====================================================================================");
-			System.out.println("\t■ 간이 게시판 Program ■");
 			System.out.println("\t| 1.목록 | 2.글쓰기 | 3.상세보기 | 4.수정하기 | 5.삭제하기 | 6종료 |");
 			System.out.println("\t\t▶ 데이터는 낭비공간없이 null 대상 저장 ◀");			
 			System.out.println("\t\t▶ 목록은 [번호]기준 오름차순 자동 정렬 ◀");
@@ -41,6 +45,7 @@ public class Board {
 				//===========
 				//2. 글쓰기
 				//===========
+				System.out.println("");
 				System.out.println("\t----- [글쓰기 기능]");
 				for(int i=0; i<strDB.length; i++){
 					if(strDB[i] == null){
@@ -62,6 +67,7 @@ public class Board {
 				//===========
 				//3. 상세보기
 				//===========
+				System.out.println("");
 				System.out.println("\t----- [상세보기 기능]");
 				System.out.print("\t● 조회할 게시물의 [번호] 입력 : ");
 				String strIndex = scan.nextLine();
@@ -93,6 +99,7 @@ public class Board {
 				//===========
 				//4. 수정하기
 				//===========
+				System.out.println("");
 				System.out.println("\t----- [수정하기 기능]");
 				System.out.print("\t● 수정할 게시물의 [번호] 입력 : ");
 				String strIndex = scan.nextLine();
@@ -122,6 +129,7 @@ public class Board {
 				//===========
 				//5. 삭제하기
 				//===========
+				System.out.println("");
 				System.out.println("\t----- [삭제하기 기능]");
 				System.out.print("\t● 삭제할 게시물의 [번호] 입력 : ");
 				String strIndex = scan.nextLine();
@@ -163,6 +171,10 @@ public class Board {
 		//@@@@@@@@@@@@@@@@@@@@@@
 		//@  PrintList메소드 : 목록 출력
 		//@@@@@@@@@@@@@@@@@@@@@@
+
+		System.out.println("");
+		System.out.println("");
+		System.out.println("\t\t\t\t\t간이 게시판");
 		System.out.println("=====================================================================================");
 		System.out.println("[번호]\t\t[제목]\t\t\t\t\t[글쓴이]\t[조회수]");
 		System.out.println("=====================================================================================");
