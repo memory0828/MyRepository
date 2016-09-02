@@ -3,20 +3,20 @@ package ch10.exam03;
 public class Account {
 	private long balance;
 
+	public Account() { }	
+
 	public long getBalance() {
 		return balance;
-	}
-
-	public void deposit(int money){
+	}	
+	public void deposit(int money) {
 		balance += money;
 	}
-	
 	public void withdraw(int money) throws BalanceInsufficientException {
-		if(balance >= money){
-			balance -= money;
-		}else {
-			//예외발생 상황(사용자 정의)
-			throw new BalanceInsufficientException("자고부족");
+		if(balance < money) {
+			throw new BalanceInsufficientException("잔고부족:"+(money-balance)+" 모자람");
 		}
+		balance -= money;
 	}
 }
+
+
