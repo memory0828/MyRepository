@@ -1,24 +1,17 @@
 package TestREDAY.ch06;
-
 public class Student {
-	 public int studentNum;
-	 public String name;
-	 
-	 public Student (int studentNum, String name) {
-	  this.studentNum = studentNum;
-	  this.name = name;
+	 public static final int MIN_BALANCE = 0;
+	 public static final int MAX_BALANCE = 1000000;
+	 private int balance;
+
+	 public int getBalance() {
+	  return balance;
 	 }
-	 
-	 @Override
-	 public int hashCode() {
-	  return studentNum;
-	 }
-	 
-	 @Override
-	 public boolean equals(Object obj) {
-	  if( (obj instanceof Student) == false ) return false;
-	  Student student = (Student) obj;
-	  if(studentNum != student.studentNum) return false;
-	  return true;
+
+	 public void setBalance(int balance) {
+	  if(balance<MIN_BALANCE || balance>MAX_BALANCE) {
+	   return;
+	  }
+	  this.balance = balance;
 	 }
 	}

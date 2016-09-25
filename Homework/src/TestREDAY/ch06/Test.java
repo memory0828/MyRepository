@@ -27,8 +27,8 @@ public class Test {
 		   totalScore += entry.getValue();
 		  }
 		  
-		  int avgScore = totalScore / map.size();
-		  System.out.println("평균점수: " + avgScore);
+		  int avgScore = totalScore / entrySet.size();
+		  System.out.println("평균점수: " + entrySet.size());
 		  
 		  System.out.println("최고점수: " + maxScore);
 		  System.out.println("최고점수를 받은 아이디: " + name);
