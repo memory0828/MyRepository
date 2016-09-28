@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>ServletJspProgramming</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+	<!--  서블릿 등록 -->
+	<servlet>
+		<!--<servlet-name>는 태그나 엘리먼트라 표현함  -->
+		<!--시작태그:<servlet-name>이사이는 값 </servlet-name>:끝태그 -->
+		<servlet-name>now</servlet-name> <!--  식별자 등록 -->
+		<servlet-class>servlet.NowServlet</servlet-class> <!--now는 servlet.NowServlet의 식별자-->
+		
+		<!-- 이 서블릿을 만들때(객체를생성할때) 어떤 정보가 필요한데, 이 객체 안에 있는게 이 객체안에다가 제공하고 싶은거 -->	
+		<init-param> 
+			<param-name>location</param-name>
+			<param-value>서울</param-value> <!--  이값은 수시로 변활수있다(개발자 마음대로) 근데 어짜피 <param-name>으로 사용하기 때문에 언제든 사용해도 상관없음-->
+		</init-param>
+
+		<!-- 톰켓이 시작할 때 객체를 만들겠다. -->
+		<!-- 정확히 말해서 startup(=웹 애플리케이션이 WAS에 배치되자 마자 객체를 만들어라) -->
+		<load-on-startup>1</load-on-startup> <!--  1 2 3 .. 이렇게 할수있는데 1번부터 생성한다는 우선순위임 -->
+		
+	</servlet>
+	<!--  서블릿 URL 매핑 -->
+	<servlet-mapping>
+		<servlet-name>now</servlet-name>	<!-- now 등록되어있는 이 서블릿을 -->
+		<url-pattern>/now/</url-pattern>		<!-- /now(context는생략)로 요청되면 처리하겠다 --> 
+		<!--요청HTTP의 시장행에 이렇게 들어가있으면 이 now로 등록되어있는 이 서블릿을 실행시켜주겠다. -->
+		<!-- ================================== -->
+		<!--GET | /ServletJspProgramming/now | HTTP/1/1 -->
+		<!--       ====================  ==== -->
+		<!--                  context            /now 는 어떤 서블릿을 실행할거에 대한 정보 -->
+		<!-- ================================== -->
+		<!--1. 이렇게 되면 /now을 통해서 -->
+		<!--   앞에서 now로 정의돈 servlet.NowServlet이 실행되고 -->
+		<!--2. 요청HTTP에 있는 GET 내용을 통해서 -->
+		<!--   doGet(...) 가 실행된다. -->
+		<!--   만약  요청HTTP가 POST 면 -->
+		<!--   doPost(..)가 실행되겠다~ -->
+	</servlet-mapping>
+
+	<!--매핑은 A ─ B  A와 B를 서로 연결시킨다.-->
+	<!--이때 A 는 /context/..... 이런식으로 되어있는 url-->
+	<!--이때 B 는 우리가 지금하고있는 서블릿-->
+	<!--그럼 클라이언트가 어떻게 요청했을떄 내가 이 서블릿을 요청시켜줄거냐 이게 바로 <servlet-mapping>-->
 </web-app>

@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?><!-- xml 선언하는 법 -->
+<!-- version은 xml의  스팩버전/UTF-8은 이아래서 사용되는 문자셋 -->
+<!-- xml은 루트 엘리먼트는 하나만 있어야한다.(=제일 바깥쪽 테그는 하나만 있어야한다. 나머지는 안쪽에 들어가있어야한다) -->
+<!-- <booklist>       .....<>..</>..나머지들....   </booklist>      --> 
+<!-- <booklist>       .....<>..</>..나머지들....   </booklist>   이렇게 두게 있으면 xml규칙에 위배됨   -->
+
+<!--  beans가 루트 엘리먼트임  -->
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
