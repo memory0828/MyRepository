@@ -17,10 +17,4 @@ public class HomeController {
 		return "home"; //jsp 이름과 똑같아야함
 	}
 	
-	@RequestMapping("/news")
-	public String news() {
-		
-		return "news";
-	}
-	
 }
