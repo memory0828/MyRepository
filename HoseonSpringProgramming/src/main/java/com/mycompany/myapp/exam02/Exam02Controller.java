@@ -20,7 +20,7 @@ public class Exam02Controller {
 
 	//■ 6-1	
 	@RequestMapping("/join")
-	public String join(Member member){ 	
+	public String join(Member02 member){ 	
 		logger.info("======= join 요청처리");
 		logger.info("getMid : " + member.getMid() );
 		logger.info("getMname : " + member.getMname() );

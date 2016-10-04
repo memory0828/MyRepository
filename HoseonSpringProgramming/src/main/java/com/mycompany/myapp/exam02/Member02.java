@@ -1,6 +1,6 @@
 package com.mycompany.myapp.exam02;
 
-public class Member {
+public class Member02 {
 	private String mid;
 	private String mname;
 	private int mage;

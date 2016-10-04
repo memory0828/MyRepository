@@ -1,4 +1,4 @@
-package com.mycompany.myapp.exam03;
+package com.mycompany.myapp.exam04_board;
 
 public class Member {
 	private String mid;
@@ -6,11 +6,12 @@ public class Member {
 	private String mpassword;
 	private String memail;
 	private String mtel;
-	private String mjab;
+	private String mjob;
 	private String[] mskill;
 	private String maddress1;
 	private String maddress2;
 	private String mbirth;
+	
 	public String getMid() {
 		return mid;
 	}
@@ -41,11 +42,11 @@ public class Member {
 	public void setMtel(String mtel) {
 		this.mtel = mtel;
 	}
-	public String getMjab() {
-		return mjab;
+	public String getMjob() {
+		return mjob;
 	}
-	public void setMjab(String mjab) {
-		this.mjab = mjab;
+	public void setMjob(String mjob) {
+		this.mjob = mjob;
 	}
 	public String[] getMskill() {
 		return mskill;
@@ -71,7 +72,6 @@ public class Member {
 	public void setMbirth(String mbirth) {
 		this.mbirth = mbirth;
 	}
-	
 	
 	
 }

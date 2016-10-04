@@ -21,7 +21,7 @@ public class Exam03Controller {
 	}	
 
 	@RequestMapping("/join")
-	public String join(Member member){
+	public String join(Member03 member){
 		logger.info("=========== join 요청처리");
 		logger.info( member.getMid() );		
 		logger.info( member.getMname() );
@@ -34,5 +34,6 @@ public class Exam03Controller {
 		logger.info( member.getMbirth() );		
 		logger.info(Arrays.toString( member.getMskill() ) );
 		return "exam03/index";
+		
 	}	
 }

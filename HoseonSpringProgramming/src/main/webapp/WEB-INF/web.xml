@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+
+	<filter> <!-- 스프링교제 272p 내용(인코딩 필터)  -->
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+		   <!--  이 파라미터이름(encoding)은 마음대로 못바꿈 저 위 encodingFilter 이넘이 나중 이 값을 찾으니깐  -->
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>		
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern> 
+		<!-- 클라이언트가 어떻게 요청했을 때 이필터를 동작시킬것이냐 : / -엥? 이거 하나로 안되고 /* 이렇게 써야함 -_-
+		      근데 / 나 /* 똑같은 의미인데... DispatcherServlet 아닌 넘은 이렇게 지정해야함.. -->
+	</filter-mapping>
+	
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
