@@ -7,8 +7,8 @@
 <body>
 <b>Exam08 - 리다이렉트</b><br/>
 <b>인덱스</b><br/>
-1) <a href="/myapp/exam08/join">회원 가입 - 10/4</a><br/>
-2) <a href="/myapp/exam08/write">게시물 쓰기 - 10/4</a><br/>
+1) <a href="/myapp/exam08/join">회원 가입 - 10/6</a><br/>
+2) <a href="/myapp/exam08/write">게시물 쓰기 - 10/6</a><br/>
 </body>
 </html>
 
