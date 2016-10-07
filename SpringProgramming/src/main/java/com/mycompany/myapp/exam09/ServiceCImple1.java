@@ -11,6 +11,6 @@ public class ServiceCImple1 implements ServiceC {
 	}
 	@Override
 	public void method() {
-		logger.info("●ServiceC를 구현한 ServiceC를 method 요청처리");
+		logger.info("●ServiceC를 구현한 ServiceC를 method 실행");
 	}
 }

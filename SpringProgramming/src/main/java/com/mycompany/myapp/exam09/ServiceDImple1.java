@@ -11,6 +11,6 @@ public class ServiceDImple1 implements ServiceD {
 	}
 	@Override
 	public void method() {
-		logger.info("●ServiceD를 구현한 ServiceD를 method 요청처리");
+		logger.info("●ServiceD를 구현한 ServiceD를 method 실행");
 	}
 }

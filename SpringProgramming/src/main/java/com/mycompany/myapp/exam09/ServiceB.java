@@ -11,6 +11,6 @@ public class ServiceB {
 		logger.info("●ServiceB()객체 생성");
 	}
 	public void method(){
-		logger.info("●ServiceB의 method 요청처리");
+		logger.info("●ServiceB의 method 실행");
 	}
 }

@@ -47,6 +47,28 @@
 	<beans:bean name="serviceCImplObj" class="com.mycompany.myapp.exam09.ServiceCImple1"/>
 	<beans:bean name="serviceDImplObj" class="com.mycompany.myapp.exam09.ServiceDImple1"/>
 	
+	<!--  ●3. Constructor 이용주입-->	
+	<!--  ●3-1. C를 관리 객체로 생성-->
+	<!-- 이것도 C를 관리객체로 만드는거고 거기에 생성자에 뭘 넘기는 코드가 들어감 -->
+	<beans:bean name="cObj" class="com.mycompany.myapp.exam09.C">
+		<!--관리객체인 d(바로 아래서 지정해놓았음)를 생성자 매개값으로 전달해라
+		매개값인데 value=.. 을 사용안하고 ref를 사용한건 클래스 이름이라서-->
+		<beans:constructor-arg ref="dObj"/>	
+	</beans:bean>
+	<!--  ●3-2. D를 관리 객체로 생성(3-1보다 소스순서상 위로가도 상관없음)-->
+	<beans:bean name="dObj" class="com.mycompany.myapp.exam09.D" />
+	<!--  추가1(인수2개짜리)-->
+	<beans:bean name="eObj" class="com.mycompany.myapp.exam09.E" >
+		<beans:constructor-arg ref="bObj"/>	
+		<beans:constructor-arg ref="dObj"/>
+	</beans:bean>
+	<!--  추가2(인수3개짜리 중 한개는 인터페이스)-->
+	<beans:bean name="fObj" class="com.mycompany.myapp.exam09.F" >
+		<beans:constructor-arg ref="serviceAObj"/>	
+		<beans:constructor-arg ref="serviceBObj"/>
+		<beans:constructor-arg ref="serviceCImplObj"/> 
+	</beans:bean>	
+	
 	<!--  ■2. Exam08Controller 객체를 찾아서 가져오기(이미 만들어져있는거 찾아오는 개념)
 	             역할 : 이아래 코드를 쓴다고 객체를 새로 만드는게 아니라 기존에 만들어져있을걸 가져오는 거다
 		  	   - ■0을 통해서 처리되었듯이 Exam08Controller로 가보면 
@@ -75,7 +97,14 @@
 		<beans:property name="serviceAxx" ref="serviceAObj"/>		
 		<beans:property name="serviceBxx" ref="serviceBObj"/>		
 		<beans:property name="serviceCxx" ref="serviceCImplObj"/>		
-		<beans:property name="serviceDxx" ref="serviceDImplObj"/>		
+		<beans:property name="serviceDxx" ref="serviceDImplObj"/>
+		
+		<!-- exam09Controller에 위에서 생성자로 D가 주입되어있는 C를 setter 주입함 -->
+		<!-- exam09Controller에서 바로 못하는건 이건 @Controller로 지정되있기 때문에
+		컨트롤러는 기본 생성자만 허용하기 때문이지--> 
+		<beans:property name="cxx" ref="cObj"/>
+		<beans:property name="exx" ref="eObj"/>
+		<beans:property name="fxx" ref="fObj"/>
 	</beans:bean>
 
 </beans:beans>

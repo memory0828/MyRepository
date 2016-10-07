@@ -11,7 +11,6 @@ public class Exam09Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Exam09Controller.class);
 
 	//1. setter방식으로 주입 =======================
-	//private B b = new B(); DI 즉 주입하려면 이렇게 생성하지 않는다
 	private B b;
 	public void setBxx(B b) {
 		logger.info("●b 주입");		
