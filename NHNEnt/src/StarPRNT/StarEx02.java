@@ -1,3 +1,4 @@
+package StarPRNT;
 
 public class StarEx02 {
     public static void main(String[] args) {
