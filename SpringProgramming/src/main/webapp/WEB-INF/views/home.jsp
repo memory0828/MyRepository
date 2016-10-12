@@ -33,5 +33,8 @@
 	 <br/>	 
 	 ■9. <a href ='/myapp/exam09/index'>Exam09</a> : 의존성 주입(DI) - XML설정 파일 이용 10/6, 10/7<br>	 
 	 ■10. <a href ='/myapp/exam10/index'>Exam10</a> : 의존성 주입(DI) - 어노테이션 이용 10/7<br>	 
+	<br/>	 
+	 ■11. <a href ='/myapp/exam11/index'>Exam11</a> : 서비스 계층과 데이터(퍼시스턴스(=데이터가 계속적으로 지속적으로 사용해 한다)) 계층)10/12<br>
+	 - 데이터(퍼시스턴스) 계층을 데이터화 작업을 하는 계층임<br> 
 </body>
 </html>

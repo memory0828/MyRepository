@@ -22,6 +22,8 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- 이 InternalResourceViewResolver을 name=""으로 등록하지 않는 이유는 몇 컨트롤러는 예약된 이름이 있기 때문이지~
+	      이놈은 완전한 경로를 만들어주는 역할을 하는 놈  -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
@@ -30,20 +32,81 @@
 	<!-- ■0. com.mycompany.myapp 이 안에있는 @어노테이션Controller를 조사해서 객체 생성해줌! -->
 	<context:component-scan base-package="com.mycompany.myapp" />
 	
+	<!-- 관리 객체 생성 및 의존성 주입(요즘에는 이런 방식 잘 안씀, 하지만 옛날에는 많이 썼으니 알아두기!) -->
+	<!--  ■1. 관리객체 생성(been 태그 쓰기)-->	
+	<!--  ●1-1. B를 관리객체 생성(been 태그 쓰기)
+	             역할 : 스프링이 관리하던 객체중에서 b라는 객체가 없으면 생성해서 관리하는 역할이고 이때 관리하는 이름으로 b를 준다
+	           - 맨 첫 라인의 xmlns:beans="http://www.springframework.org/schema/beans" 를 이용해서 접두사 사용 -->
+	<!-- <beans:bean id="bObj" class = "com.mycompany.myapp.exam09.B" /> 이거나 아래꺼나 똑같은 id와 name 쓰는 차이일뿐-->
 	<beans:bean name="bObj" class="com.mycompany.myapp.exam09.B" />
+	<!--</ beans:bean> 이 빈사이에 내용이있으면 이 마지막맺음을 사용하는데 없으니 위에서 그냥 />식으로 끝내버리니 이거 지워야함-->
+	<!--  ●1-2. (복습으로 추가됨)A를 관리객체 생성(been 태그 쓰기)-->
 	<beans:bean name="aObj" class="com.mycompany.myapp.exam09.A" />
+	<!--  ●1-3. (복습으로 추가됨)-->
 	<beans:bean name="serviceAObj" class="com.mycompany.myapp.exam09.ServiceA"/>
 	<beans:bean name="serviceBObj" class="com.mycompany.myapp.exam09.ServiceB"/>
+	<!--  ●1-4. 인터페이스를 사용하는 방법(이를 통해서 유지보수의 편리성확보!)-->
 	<beans:bean name="serviceCImplObj" class="com.mycompany.myapp.exam09.ServiceCImple1"/>
 	<beans:bean name="serviceDImplObj" class="com.mycompany.myapp.exam09.ServiceDImple1"/>
 	
-	<beans:bean name="exam09Controller" class="com.mycompany.myapp.exam09.Exam09Controller">		 
+	<!--  ●3. Constructor 이용주입-->	
+	<!--  ●3-1. C를 관리 객체로 생성-->
+	<!-- 이것도 C를 관리객체로 만드는거고 거기에 생성자에 뭘 넘기는 코드가 들어감 -->
+	<beans:bean name="cObj" class="com.mycompany.myapp.exam09.C">
+		<!--관리객체인 d(바로 아래서 지정해놓았음)를 생성자 매개값으로 전달해라
+		매개값인데 value=.. 을 사용안하고 ref를 사용한건 클래스 이름이라서-->
+		<beans:constructor-arg ref="dObj"/>	
+	</beans:bean>
+	<!--  ●3-2. D를 관리 객체로 생성(3-1보다 소스순서상 위로가도 상관없음)-->
+	<beans:bean name="dObj" class="com.mycompany.myapp.exam09.D" />
+	<!--  추가1(인수2개짜리)-->
+	<beans:bean name="eObj" class="com.mycompany.myapp.exam09.E" >
+		<beans:constructor-arg ref="bObj"/>	
+		<beans:constructor-arg ref="dObj"/>
+	</beans:bean>
+	<!--  추가2(인수3개짜리 중 한개는 인터페이스)-->
+	<beans:bean name="fObj" class="com.mycompany.myapp.exam09.F" >
+		<beans:constructor-arg ref="serviceAObj"/>	
+		<beans:constructor-arg ref="serviceBObj"/>
+		<beans:constructor-arg ref="serviceCImplObj"/> 
+	</beans:bean>	
+	
+	<!--  ■2. Exam08Controller 객체를 찾아서 가져오기(이미 만들어져있는거 찾아오는 개념)
+	             역할 : 이아래 코드를 쓴다고 객체를 새로 만드는게 아니라 기존에 만들어져있을걸 가져오는 거다
+		  	   - ■0을 통해서 처리되었듯이 Exam08Controller로 가보면 
+		  	     @어노테이션Controller로 선언되어있어서 이미 객체로 만들어져 있기 때문에 찾아서 가져오는거 -->
+	<!--<beans:bean class="com.mycompany.myapp.exam09.Exam09Controller"/>
+	그럼 여기서 name은 지정안했는데, 보통 클래스의 첫자를 소문자로 등록함 아래처럼~~!
+	알쏭달송!:그런데 여기서 Exam09Controller은 @Controller가 선언되어있기 때문에 이미 객체가 만들어져있고 관리객체가 되어있다.
+	            그래서 객체가만들어질때 위에서 말한 클래스의 첫자를 소문자로 처리해서 자동 객체를 생성함으로
+	            exam09Controller 이 되어있다. 그래서 이 아래소스는 위에 관리객체 생성처럼 생성처리가 되는게 아니라
+	            가져다 쓴다는 개념이 되는거다(관리객체는 DI컨테이너에 하나만 생성됨으로)
+	            돌려서 생각하면 @Controller가 만약 Exam09Controller에서 지워지면
+	            이 아래소스는 관리객체 생성을 뜻하는 소스가 된다.  -->
+	<beans:bean name="exam09Controller" class="com.mycompany.myapp.exam09.Exam09Controller">
+
+		<!-- 이 아래부터 <setter를 호출하는거고 setter메소드를 쓰는데 settter 메소드이름에서 set글자를 빼고 첫자를 소문자로하는 이름이 쓰임  -->
+		<!-- Setter 주입( = property는 결국 Setter 주입하는거임 )	
+		<beans:property name="setter이름" ref="매개값으로 전달할 객채(관리객체이름)"/>
+			다시
+			ref="매개값으로 전달할 객채(관리객체이름)
+			또 value="매개변수에 전달할 내용(인수값) 임"
+		 -->	
+		 <!-- 결국 이 아랫 부분이 Setter 주입이 되고 이걸 통해서 Setter 주입 기능이 실행됨 -->
+		 
 		<beans:property name="bxx" ref="bObj"/> 
 		<beans:property name="axx" ref="aObj"/>
 		<beans:property name="serviceAxx" ref="serviceAObj"/>		
 		<beans:property name="serviceBxx" ref="serviceBObj"/>		
 		<beans:property name="serviceCxx" ref="serviceCImplObj"/>		
-		<beans:property name="serviceDxx" ref="serviceDImplObj"/>		
+		<beans:property name="serviceDxx" ref="serviceDImplObj"/>
+		
+		<!-- exam09Controller에 위에서 생성자로 D가 주입되어있는 C를 setter 주입함 -->
+		<!-- exam09Controller에서 바로 못하는건 이건 @Controller로 지정되있기 때문에
+		컨트롤러는 기본 생성자만 허용하기 때문이지--> 
+		<beans:property name="cxx" ref="cObj"/>
+		<beans:property name="exx" ref="eObj"/>
+		<beans:property name="fxx" ref="fObj"/>
 	</beans:bean>
 
 </beans:beans>

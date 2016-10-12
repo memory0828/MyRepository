@@ -11,7 +11,7 @@ public class B {
 	}
 	
 	public void method(){
-		logger.info("●B의 method 요청처리");
+		logger.info("●B의 method 실행");
 	}
 	
 }

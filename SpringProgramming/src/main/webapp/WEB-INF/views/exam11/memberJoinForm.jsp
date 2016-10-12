@@ -1,0 +1,54 @@
+<%@ page contentType = "text/html;charset=UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+</head>
+<body>
+	[회원 가입 폼]<br/>
+	<form method="post" action="/myapp/exam11/memberJoin">
+		아이디 : <input type="text" name ="mid" value="fall"/><br/>
+		이름 : <input type="text" name ="mname" value="한가을" /><br/>		
+		비밀번호 : <input type="password" name ="mpassword"  value="12345"/><br/>		
+		이메일 : <input type="email" name ="memail"  value="fall@naver.com"/><br/>		
+		전화번호 : <input type="tel" name ="mtel"  value="010-123-1234"/><br/>
+		직업 : 
+				<input type="radio" name ="mjab" value="대학생">대학생
+				<input type="radio" name ="mjab" value="회사원" checked>회사원
+				<input type="radio" name ="mjab" value="공무원">공무원<br/>
+		개발분야:
+				<input type = "checkbox" name ="mskill" value="web"> 웹개발
+				<input type = "checkbox" name ="mskill" value="system" checked> 시스템 개발
+				<input type = "checkbox" name ="mskill" value="bigdata" checked> 빅데이터 개발
+				<input type = "checkbox" name ="mskill" value="IOT" > IOT<br/>
+		주소:
+				<select name = "maddress1">
+					<option>서울특별시</option>
+					<option selected">경기도</option>
+					<option>부산광역시</option>
+					<option>대구광역시</option>					
+					<option>제주광역시</option>
+				</select>
+				<select name = "maddress2">
+					<option>인천시</option>
+					<option>수원시</option>
+					<option selected>용인시</option>
+					<option>부천시</option>					
+					<option>의왕시</option>
+				</select>	<br/>
+		생년월일 : <input type = "date" name = "mbirth" value="2016-09-29"><br/>
+
+				<!-- 이주석을 앞으로 주로 사용하자(나중에 html파일에도 안보임) -->
+				<%-- 이주석을 앞으로 주로 사용하자(나중에 html파일에도 안보임) --%>				
+				<%-- 이 3 버튼은 기능이 똑같음 / 서버로 전송하는 역할
+				1. submit input
+				2. button
+				3. input type="image"
+				  --%>
+				<input type='submit' value='가입'>
+				<button>가입</button> <
+				<input type="image" src="/myapp/resources/image/join.png" width = 100>
+	</form>
+	
+</body>
+</html>

@@ -5,7 +5,7 @@
 	<meta charset = "UTF-8">
 </head>
 <body>
-	HoSeonSpringProgramming
+	SpringProgramming
 	<hr/> <!--  시작과 동시에 끝이다. 일땐 이렇게 써도됨
 	                내용이 있으면 시작태그와 끝태그를 명시적으로 넣어주기 -->
 	                
@@ -31,6 +31,10 @@
 	 ■7 <a href ='/myapp/exam07/index'>Exam07</a> : 컨트롤러에서 JSP로 데이터 객체 전달 - 10/4, 10/6<br>	 
 	 ■8 <a href ='/myapp/exam08/index'>Exam08</a> : 리다이렉트 - 10/6<br>
 	 <br/>	 
-	 ■9. <a href ='/myapp/exam09/index'>Exam09</a> : 의존성 주입(DI) - 10/6<br>	 
+	 ■9. <a href ='/myapp/exam09/index'>Exam09</a> : 의존성 주입(DI) - XML설정 파일 이용 10/6, 10/7<br>	 
+	 ■10. <a href ='/myapp/exam10/index'>Exam10</a> : 의존성 주입(DI) - 어노테이션 이용 10/7<br>	 
+	<br/>	 
+	 ■11. <a href ='/myapp/exam11/index'>Exam11</a> : 서비스 계층과 데이터(퍼시스턴스(=데이터가 계속적으로 지속적으로 사용해 한다)) 계층)10/12<br>
+	 - 데이터(퍼시스턴스) 계층을 데이터화 작업을 하는 계층임<br> 
 </body>
 </html>

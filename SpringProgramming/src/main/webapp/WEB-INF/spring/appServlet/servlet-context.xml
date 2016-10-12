@@ -22,6 +22,8 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- 이 InternalResourceViewResolver을 name=""으로 등록하지 않는 이유는 몇 컨트롤러는 예약된 이름이 있기 때문이지~
+	      이놈은 완전한 경로를 만들어주는 역할을 하는 놈  -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
