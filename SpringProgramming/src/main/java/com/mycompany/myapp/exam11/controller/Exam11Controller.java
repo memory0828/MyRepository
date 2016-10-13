@@ -108,7 +108,7 @@ public class Exam11Controller {
 		return "redirect:/exam11/index";
 	}
 
-	@RequestMapping(value="/boardList")
+	@RequestMapping("/boardList")
 	public String boardList(Model model){
 		logger.info("=========== boardList 요청처리");
 		List<Board> list = boardService.getList();
@@ -116,5 +116,34 @@ public class Exam11Controller {
 		return "exam11/boardList";
 	}
 
+	@RequestMapping("/boardView")
+	public String boardView(int bno, Model model){
+		logger.info("=========== boardView 요청처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardView";
+	}
+
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.GET)
+	public String boardUpdateForm(int bno, Model model){
+		logger.info("=========== boardUpdateForm 요청처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardUpdateForm";
+	}
+
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.POST)
+	public String boardUpdate(Board board){
+		logger.info("=========== boardUpdate 요청처리");
+		boardService.updateBoard(board);
+		return "redirect:/exam11/boardList";
+	}
+	
+	@RequestMapping("/boardDelete")
+	public String boardDelete(int bno){
+		logger.info("=========== boardDelete 요청처리");
+		boardService.deleteBoard(bno);
+		return "redirect:/exam11/boardList";
+	}
 	
 }
