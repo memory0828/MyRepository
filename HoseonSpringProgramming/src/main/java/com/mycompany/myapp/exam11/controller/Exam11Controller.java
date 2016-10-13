@@ -17,6 +17,7 @@ import com.mycompany.myapp.exam11.service.Exam11BoardService;
 import com.mycompany.myapp.exam11.service.Exam11MemberService;
 
 @Controller //이렇게하면 디폴트 이름인데( 첫글자가 소문자로 시작하는)
+//@Controller("MemberController") //이렇게 함으로 이름을 지정할수 있음
 @RequestMapping("/exam11")
 public class Exam11Controller {	
 	private static final Logger logger = LoggerFactory.getLogger(Exam11Controller.class);
@@ -24,6 +25,11 @@ public class Exam11Controller {
 	//필드 주입
 	@Autowired
 	private Exam11MemberService memberService;
+	/* setter주입
+	@Autowired
+	public void setMemberService(Exam11MemberService memberService) {
+		this.memberService = memberService;
+	}*/
 
 	@Autowired
 	private Exam11BoardService boardService;
@@ -102,7 +108,7 @@ public class Exam11Controller {
 		return "redirect:/exam11/index";
 	}
 
-	@RequestMapping(value="/boardList")
+	@RequestMapping("/boardList")
 	public String boardList(Model model){
 		logger.info("=========== boardList 요청처리");
 		List<Board> list = boardService.getList();
@@ -110,5 +116,34 @@ public class Exam11Controller {
 		return "exam11/boardList";
 	}
 
+	@RequestMapping("/boardView")
+	public String boardView(int bno, Model model){
+		logger.info("=========== boardView 요청처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardView";
+	}
+
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.GET)
+	public String boardUpdateForm(int bno, Model model){
+		logger.info("=========== boardUpdateForm 요청처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardUpdateForm";
+	}
+
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.POST)
+	public String boardUpdate(Board board){
+		logger.info("=========== boardUpdate 요청처리");
+		boardService.updateBoard(board);
+		return "redirect:/exam11/boardList";
+	}
+	
+	@RequestMapping("/boardDelete")
+	public String boardDelete(int bno){
+		logger.info("=========== boardDelete 요청처리");
+		boardService.deleteBoard(bno);
+		return "redirect:/exam11/boardList";
+	}
 	
 }

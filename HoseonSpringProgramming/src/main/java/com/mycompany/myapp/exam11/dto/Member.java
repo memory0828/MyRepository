@@ -16,6 +16,8 @@ public class Member {
 	private String maddress1;
 	private String maddress2;
 	
+	//스프링이 똑똑하지 않아서 Date형식을 넘겨받을때 이게 Date형식이다라는 것을 알려줘야함
+	//즉 날짜는 반드시 형식을 지정해줘야함. 다른 문자나 숫자들은 알아서하는데 이건 특이함!
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date mbirth;
 	
