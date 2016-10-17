@@ -39,7 +39,7 @@ public class Coordinate3 {
         for(int i=0; i< numberList.size(); i++){
         	data[i] = String.valueOf(numberList.get(i)) ; 
         }
-		
+        
         Arrays.sort(data);
         
         //가장작은수만들기
