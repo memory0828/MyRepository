@@ -85,8 +85,18 @@ select * from emp where ename not like '%성%'; --이렇게도 쓸수있지만..
 select * from emp where comm=null; --이렇게 쓰면 안먹힘(안됨!)
 select * from emp where comm is null; --이렇게 써야함
 select * from emp where comm is not null;
+-- 3.1 오름차순 정렬을 위한 ASC
+select * from emp order by sal; --기본적으로 오름차순
+select * from emp order by sal asc;
+select * from emp order by hiredate desc; --내림차순
+-- 입사한 순서(1차정렬) -> 이름순(2차정렬)
+select * from emp order by hiredate desc, ename asc;
+-- 98p 집합연산자는 생략함(당장필요한게 아님)
 
-
+-- ★★★시험문제★★★30부서에서 월급이 400이상인 사원의 번호, 이름, 년봉을 가져오시오
+select empno, ename, (sal*12+nvl(comm,0)) as yearsal from emp
+where sal>400 and deptno=30
+order by yearsal desc;
 
 
 
