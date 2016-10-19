@@ -17,7 +17,7 @@ create table board (
 
 --Section02 테이블 구조를 변경하는 ALTER TABLE 문
 alter table member add email varchar(100) null;
-alter table member modify email varchar(50) null;
+alter table member modify email varchar(50);
 alter table member drop column email;
 
 
@@ -28,6 +28,3 @@ alter table member rename to member2;
 --Section04 테이블을 삭제하는 DROP TABLE문
 drop table member;
 drop table board;
-
-
-
