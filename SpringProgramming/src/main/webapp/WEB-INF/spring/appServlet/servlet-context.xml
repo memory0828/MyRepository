@@ -109,4 +109,22 @@
 		<beans:property name="fxx" ref="fObj"/>
 	</beans:bean>
 
+	<!-- Connection Pool(161024) -->
+	<!-- 스프링은 커넥션풀을 제공하지 않기때문에 이렇게 따로 구해서 설정함~-->
+	<beans:bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 그동안은 이렇게 바로 커넥션을 만들었는데, 이제는 안써! -->
+		<!-- Class.forName("oracle.jdbc.OracleDriver"); -->
+		<!-- conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","tester1","kosa12345"); -->
+		<!-- 1. 아래처럼 위의 기본정보들 기입하고 -->	
+		<beans:property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+		<beans:property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+		<beans:property name="user" value="tester1"/>
+		<beans:property name="password" value="kosa12345"/>
+		<!-- 2. 설정정보넣기 -->
+		<beans:property name="maxPoolSize" value="3"/> <!-- 예)100이면 : 최대 100개까지만들겠다(공부중이니 조금만 설정함) -->
+		<beans:property name="initialPoolSize" value="1"/> <!-- 예10이면 : 100개중에 10개를 초기에 만들어놓겠다(초기 커넥션의 개수를 몇개 하겠다~) -->
+		<beans:property name="acquireIncrement" value="1"/> <!-- 예5이면 : 초기 만들어진 10개가 부족하면 5개씩 증가시키겠다(부족하면 몇개씩 증가 시낄꺼냐~) -->
+		<beans:property name="minPoolSize" value="1"/> <!-- 예)10이면 : 처음에 10개를 만들어놓고 사용하기시작했는데, 만들어놓고 나니깐 다 사용안해서 최소 10개까지만 남겨놓고 다 죽이겠다(그래서 보통 initialPoolSize랑 동일한 값을 줌)-->		
+	</beans:bean>
+
 </beans:beans>
