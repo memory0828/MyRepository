@@ -11,11 +11,12 @@ import finalsource.dto.Member;
 
 public class TestMemberDao {
 	public static void main(String[] args) {
-		//testInsert();
+		testInsert();
 		//testSelectByMid();
 		//testSelectByMname();
 		//testUpdate();
 		//testDeleteByMid();
+
 	}
 	
 	public static void testInsert() {
@@ -30,6 +31,7 @@ public class TestMemberDao {
 			Member member = new Member();
 			member.setMid("user10");
 			member.setMname("사용자10");
+			member.setMpassword("kosa12345");
 			member.setMage(26);
 			member.setMbirth(new Date());
 			
@@ -55,6 +57,7 @@ public class TestMemberDao {
 			if(member != null) {
 				System.out.print(member.getMid() + ":");
 				System.out.print(member.getMname() + ":");
+				System.out.print(member.getMpassword() + ":");
 				System.out.print(member.getMage() + ":");
 				System.out.print(member.getMbirth());
 				System.out.println();
@@ -80,6 +83,7 @@ public class TestMemberDao {
 			for(Member member : list) {
 				System.out.print(member.getMid() + ":");
 				System.out.print(member.getMname() + ":");
+				System.out.print(member.getMpassword() + ":");
 				System.out.print(member.getMage() + ":");
 				System.out.print(member.getMbirth() + ":");
 				System.out.println();
@@ -103,6 +107,7 @@ public class TestMemberDao {
 			Member member = new Member();
 			member.setMid("user10");
 			member.setMname("홍길동");
+			member.setMpassword("12345");
 			member.setMage(32);
 			member.setMbirth(new Date());
 			
@@ -124,7 +129,7 @@ public class TestMemberDao {
 			MemberDao dao = new MemberDao();
 			dao.setConn(conn);
 			
-			int rowNo = dao.deleteByMid("user10");
+			int rowNo = dao.deleteByMid("user11");
 			System.out.println(rowNo + "행이 삭제됨");
 		} catch (Exception e) {
 			e.printStackTrace();

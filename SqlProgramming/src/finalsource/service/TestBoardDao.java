@@ -11,11 +11,37 @@ import finalsource.dto.Board;
 
 public class TestBoardDao {
 	public static void main(String[] args) {
-		testInsert();
+		//testInsert();
 		//testSelectByBno();
 		//testSelectByBtitle();
 		//testUpdate();
 		//testDeleteByBno();
+		testSelectByPage(2,10);
+	}
+	public static void testSelectByPage(int pageNo, int rowsPerPage){
+		Connection conn = null;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","tester1","kosa12345");
+			
+			BoardDao dao = new BoardDao();
+			dao.setConn(conn);
+			
+			List<Board> list = dao.selectByPage(pageNo, rowsPerPage);
+			for(Board board : list) {
+				System.out.print(board.getBno() + ":");
+				System.out.print(board.getBtitle() + ":");
+				System.out.print(board.getBcontent() + ":");
+				System.out.print(board.getBwriter() + ":");
+				System.out.print(board.getBhitcount() + ":");
+				System.out.print(board.getBdate());
+				System.out.println();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try { conn.close(); } catch (SQLException e) { }
+		}
 	}
 	
 	public static void testInsert() {
@@ -28,15 +54,12 @@ public class TestBoardDao {
 			dao.setConn(conn);
 			
 			Board board = new Board();
-			board.setBno(2000);
-			board.setBtitle("테스트제목");
-			board.setBcontent("테스트내용");
-			board.setBwriter("user2000");
-			board.setBhitcount(20);
-			board.setBdate(new Date());
-			
+			board.setBtitle("테스트" + "제목");
+			board.setBcontent("테스트" + "내용");
+			board.setBwriter("user10");
 			int rowNo = dao.insert(board);
 			System.out.println(rowNo + "행이 저장됨");
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -53,7 +76,7 @@ public class TestBoardDao {
 			BoardDao dao = new BoardDao();
 			dao.setConn(conn);
 			
-			Board board = dao.selectByBno(2000);
+			Board board = dao.selectByBno(1);
 			if(board != null) {
 				System.out.print(board.getBno() + ":");
 				System.out.print(board.getBtitle() + ":");
@@ -107,11 +130,11 @@ public class TestBoardDao {
 			dao.setConn(conn);
 			
 			Board board = new Board();
-			board.setBno(2000);
+			board.setBno(1);
 			board.setBtitle("테스트제목2");
 			board.setBcontent("테스트내용2");
-			board.setBwriter("user2000");
-			board.setBhitcount(202);
+			board.setBwriter("user10");
+			board.setBhitcount(5);
 			board.setBdate(new Date());
 			
 			int rowNo = dao.update(board);
@@ -132,7 +155,7 @@ public class TestBoardDao {
 			BoardDao dao = new BoardDao();
 			dao.setConn(conn);
 			
-			int rowNo = dao.deleteByBno(2000);
+			int rowNo = dao.deleteByBno(1);
 			System.out.println(rowNo + "행이 삭제됨");
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="025CD8F6-C219-D1F7-AC64-E925AA8DAC51" name="member" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="B180CDA8-674A-1ACC-BD9B-DE07CC97E6D1" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="823E2301-D8EE-E4A9-1867-E1EEEF5FC846" name="board" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="B180CDA8-674A-1ACC-BD9B-DE07CC97E6D1" propertySourceId="" propertyTargetId=""/>
+   <object objectType="FKIndexAssociation" objectID="2E0496D9-87CA-8FD5-8200-D0A8541D2B7B" name="fk_board_writer" containerID="823E2301-D8EE-E4A9-1867-E1EEEF5FC846" refContainerID="025CD8F6-C219-D1F7-AC64-E925AA8DAC51" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="B180CDA8-674A-1ACC-BD9B-DE07CC97E6D1" propertySourceId="025CD8F6-C219-D1F7-AC64-E925AA8DAC51" propertyTargetId="823E2301-D8EE-E4A9-1867-E1EEEF5FC846"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

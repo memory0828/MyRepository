@@ -1,0 +1,172 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="EMPLOYEES" directorySegmentName="seg_0" id="F843C6B8-407B-C625-C387-AAD368759AE2">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>D66A08C2-BA45-6D6D-F78D-5E4759C0A510</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="EMAIL" id="2AF1BB83-4E3C-85A8-5F69-45C8C255FC98">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PHONE_NUMBER" id="3248168A-3EA3-3E7A-2D42-402889978A0B">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HIRE_DATE" id="5ECC9922-11F5-8E15-96D1-A5FBAEEA0346">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMPLOYEE_ID" id="9102AAB9-047E-C7DA-76D3-61E7D76F4C4B">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPARTMENT_ID" id="97B1BC7F-531F-767D-F5CE-39477F9C2FFD">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FIRST_NAME" id="A67B36DE-3919-885A-C8BB-9B86671C6A9B">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JOB_ID" id="A6F7E1D3-7A9D-D521-BFB3-73C0A3B2ABD0">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SALARY" id="B9A9C92B-87DD-523C-AD72-0E3E263CF7C7">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMMISSION_PCT" id="DE76303E-F84F-1B0E-F718-C06930B7C086">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LAST_NAME" id="ED497B7E-5550-2BFC-AD8F-FFAE8309B839">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MANAGER_ID" id="FF837ACC-FDC9-CED8-80E8-0715D1A020B6">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMP_EMAIL_UK" id="049E31CA-4E13-90BD-7DF7-D5F2FEC4F253">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMP_JOB_IX" id="08AC7AA7-51F9-A5CB-BB09-450E4559F351">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMP_DEPARTMENT_IX" id="4144CCE4-1487-9706-9B1C-AC454B7C6785">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMP_EMP_ID_PK" id="483CCB0C-0E8C-226C-5B53-EE4E2C6DE9AB">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMP_NAME_IX" id="5CFEAC12-C9DA-4B1E-F5C9-2C21C5DA19F1">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMP_MANAGER_IX" id="B80EAD64-F409-C987-C3B2-581D77A265E6">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="EMP_MANAGER_FK" id="0DDAB336-D52E-6271-012E-0ABB24244968">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="EMP_DEPT_FK" id="6A2D4325-88BB-DA7A-35C9-A7E13925B09F">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="EMP_JOB_FK" id="842B1B3E-9078-9E1A-A1F2-2C392E6FACCA">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="EMP_EMP_ID_PK" id="7849578E-0D3D-0DF5-AF51-9D898E86E816">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+<existingIndex>483CCB0C-0E8C-226C-5B53-EE4E2C6DE9AB</existingIndex>
+<indexSegment>8E0355BF-31AC-7170-3803-1771E63106BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="EMP_EMAIL_UK" id="A08F0FC4-4933-CC28-9D72-7A383A19C87E">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+<existingIndex>049E31CA-4E13-90BD-7DF7-D5F2FEC4F253</existingIndex>
+<indexSegment>8E0355BF-31AC-7170-3803-1771E63106BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

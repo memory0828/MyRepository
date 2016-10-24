@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class Board {
 	int bno;
-	String btitle;
-	String bcontent;
-	String bwriter;
-	int bhitcount;
-	Date bdate;
+	private String btitle;
+	private String bcontent;
+	private String bwriter;
+	private int bhitcount;
+	private Date bdate;
 	
 	public int getBno() {
 		return bno;

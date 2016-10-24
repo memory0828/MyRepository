@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="LOCATIONS" directorySegmentName="seg_0" id="478A51F7-E51B-6562-91CC-FB90A426B0B7">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>D66A08C2-BA45-6D6D-F78D-5E4759C0A510</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="STREET_ADDRESS" id="3CF0F03C-7078-A0D5-7989-5B686F55B115">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOCATION_ID" id="814515E1-B786-760A-0BFF-7505B39D0974">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STATE_PROVINCE" id="EEE9C015-9990-33A0-5430-555F48EE3662">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="POSTAL_CODE" id="F4B7CB91-FE07-7E7C-6538-42D3D9184161">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CITY" id="F895A801-3132-E9D8-90D8-85C8BD7681FE">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COUNTRY_ID" id="FF497937-BA4B-DFB2-673D-E185D90D3902">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_CITY_IX" id="22B9BE94-812A-05C8-7F67-B266EF830E11">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_COUNTRY_IX" id="345B6479-7A59-05C9-1E78-4263538C2FD4">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_STATE_PROVINCE_IX" id="BD7396FF-EEFE-4E13-7F05-BD429AF28A5D">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_ID_PK" id="E7070D49-8B5B-71FE-7B36-F25BBE6D307F">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<schemaObject>1F53F993-AAC5-7553-796B-1D07A05A270E</schemaObject>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="LOC_C_ID_FK" id="90F8A94F-FF53-3874-8979-029AB620ED21">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="LOC_ID_PK" id="C98AB5CF-0E5C-30B1-6B68-AF5C6DBAA508">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-21 00:24:50 UTC</createdTime>
+<ownerDesignName>161021_1_hr</ownerDesignName>
+<logging>NO</logging>
+<segment>8E0355BF-31AC-7170-3803-1771E63106BE</segment>
+<tableSpace>C365E523-32A4-0F5B-336E-FA195E477EED</tableSpace>
+<existingIndex>E7070D49-8B5B-71FE-7B36-F25BBE6D307F</existingIndex>
+<indexSegment>8E0355BF-31AC-7170-3803-1771E63106BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
