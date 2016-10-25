@@ -12,7 +12,7 @@
 	<!-- 동적으로 context알아내는 방법2 표현 언어 사용 -->
 	2. <a href="${pageContext.servletContext.contextPath}/myweb/freeboard">자유게시판</a></br>
 	3. <a href="${pageContext.servletContext.contextPath}/myweb/photoboard">포토 게시판</a></br>
- 	 
+ 	   
 </body>
 </html>
 
