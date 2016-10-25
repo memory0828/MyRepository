@@ -39,4 +39,13 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<!-- 
+	<resource-ref>
+		<description>Local Datasource</description> 있으나 없으나 상관없어서 생략가능(근데 그냥씀)
+		<res-ref-name>jdbc/orcl</res-ref-name>    db이름지정
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	 -->
 </web-app>

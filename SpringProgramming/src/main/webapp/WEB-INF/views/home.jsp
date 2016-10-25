@@ -37,5 +37,6 @@
 	 ■11. <a href ='/myapp/exam11/index'>Exam11</a> : 서비스 계층과 데이터(퍼시스턴스(=데이터가 계속적으로 지속적으로 사용해 한다)) 계층)10/12<br/>
 	 - 데이터(퍼시스턴스) 계층을 데이터화 작업을 하는 계층임<br/> 
 	 ■12. <a href ='/myapp/exam12/index'>Exam12</a> : 커넥션 풀 설정<br/>	 
+	 ■13. <a href ='/myapp/exam13/index'>Exam13</a> : JdbcTemplate을 이용한 DAO<br/>	 
 </body>
 </html>

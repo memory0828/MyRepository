@@ -34,7 +34,11 @@ public class Exam12Service {
 			//conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","tester1","kosa12345");
 			conn = dataSource.getConnection(); //대여
 			dao.setConn(conn);
+			
+			//★핵심코드(나머지는 악세서리 코드)
+			//그럼 악세서리 코드없이 좀 간편화하게 할 수 없을까? 이건 13장에서 나옴
 			int rowNo = dao.insert(member);
+			
 			logger.info(rowNo + "행이 저장됨");
 		} catch (Exception e) {
 			e.printStackTrace();
