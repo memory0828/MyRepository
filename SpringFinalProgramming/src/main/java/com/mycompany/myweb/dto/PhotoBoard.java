@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class FreeBoard {
+public class PhotoBoard {
     private int bno;
     private String btitle;
     private String bcontent;
@@ -12,6 +12,9 @@ public class FreeBoard {
     private int bhitcount;
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date bdate;
+    private String originalfile;
+    private String savedfile;
+    private String mimetype;
     
 	public int getBno() {
 		return bno;
@@ -49,6 +52,24 @@ public class FreeBoard {
 	public void setBdate(Date bdate) {
 		this.bdate = bdate;
 	}
-	
+	public String getOriginalfile() {
+		return originalfile;
+	}
+	public void setOriginalfile(String originalfile) {
+		this.originalfile = originalfile;
+	}
+	public String getSavedfile() {
+		return savedfile;
+	}
+	public void setSavedfile(String savedfile) {
+		this.savedfile = savedfile;
+	}
+	public String getMimetype() {
+		return mimetype;
+	}
+	public void setMimetype(String mimetype) {
+		this.mimetype = mimetype;
+	}
+    
     
 }
