@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,8 @@ import com.mycompany.myweb.dto.FreeBoard;
 
 @Component
 public class FreeBoardDao {
+	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	public int insert(FreeBoard freeboard){
@@ -20,7 +23,7 @@ public class FreeBoardDao {
 			sql,
 			freeboard.getBtitle(),
 			freeboard.getBcontent(),
-			freeboard.getBwriter()			
+			freeboard.getBwriter()
 		);
 		return row;
 	}
@@ -31,7 +34,7 @@ public class FreeBoardDao {
 			sql,
 			freeboard.getBtitle(),
 			freeboard.getBcontent(),
-			freeboard.getBhitcount(),			
+			freeboard.getBhitcount(),
 			freeboard.getBno()
 		);
 		return row;
@@ -43,9 +46,9 @@ public class FreeBoardDao {
 		return row;
 	}
 
-	public FreeBoard selectByMid(String mid){
+	public FreeBoard selectByBno(int bno){
 		String sql = "select bno, btitle, bcontent, bwriter, bhitcount, bdate from freeboard where bno=?";
-		List<FreeBoard> list = jdbcTemplate.query(sql, new Object[]{mid},
+		List<FreeBoard> list = jdbcTemplate.query(sql, new Object[]{bno},
 				new RowMapper<FreeBoard>(){
 					@Override
 					public FreeBoard mapRow(ResultSet rs, int row) throws SQLException {

@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class PhotoController {
-	private static final Logger logger = LoggerFactory.getLogger(PhotoController.class);
+public class PhotoBoardController {
+	private static final Logger logger = LoggerFactory.getLogger(PhotoBoardController.class);
 	
 	
 	

@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,8 @@ import com.mycompany.myweb.dto.Member;
 
 @Component
 public class MemberDao {
+	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	public int insert(Member member){
@@ -39,7 +42,7 @@ public class MemberDao {
 				
 				member.getMid()
 		);
-		return row;		
+		return row;
 	}
 	
 	public int delete(String mid){
@@ -57,7 +60,7 @@ public class MemberDao {
 		//Object[] arr1 = new Object[3];
 		//Obejct[] arr2 = {"a", "b", "c"}
 		
-		List<Member> list = jdbcTemplate.query(sql, new Object[]{mid},
+		List<Member> list = jdbcTemplate.query(sql, new Object[] {mid},
 				new RowMapper<Member>(){
 					@Override
 					public Member mapRow(ResultSet rs, int row) throws SQLException {
@@ -71,7 +74,7 @@ public class MemberDao {
 						return member;
 					}
 		} );
-		return (list.size() !=0)?list.get(0):null;
+		return (list.size() !=0)? list.get(0) : null;
 	}
 	
 	public String selectByMemail(String memail){
@@ -85,10 +88,7 @@ public class MemberDao {
 		} );
 		return (list.size() !=0)?list.get(0):null;
 	}
+	
 }
-
-
-
-
 
 
