@@ -39,7 +39,6 @@
 		</tr>
 		</c:forEach>
 	</table>
-	<a href="#" >1</a>
 	<div stytle="width:600px">
 		<a href="list?pageNo=1">[처음]</a>
 		<c:if test="${groupNo>1}">
@@ -50,7 +49,6 @@
 			<a href="list?pageNo=${i}"
 				<c:if test="${pageNo==i}">style="color:red"</c:if> 
 			>${i}</a>
-		&nbsp;
 		</c:forEach>
 		<c:if test="${groupNo<totalGroupNo}">
 			<a href="list?pageNo=${endPageNo+1}">[다음]</a>

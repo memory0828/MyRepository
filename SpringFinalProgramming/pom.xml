@@ -143,6 +143,14 @@
 		<!-- Connection Pool(161024) 관련 / end -->
 		<!--  ========================= -->
 		
+		<!-- File Upload(161028) -->
+	    <dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+		<!--  ========================= -->
+		
 	</dependencies>
     <build>
         <plugins>
