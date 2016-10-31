@@ -31,11 +31,14 @@ public class PhotoBoardService {
 		return WRITE_SUCESS;
 	}
 
+	
 	public int modify(PhotoBoard freeBoard){
 		int row = photoBoardDao.update(freeBoard);
 		if(row == 0) { return MODIFY_FAIL; }
 		return MODIFY_SUCESS;
 	}
+	
+	
 	
 	public int remove(int bno){
 		int row = photoBoardDao.delete(bno);

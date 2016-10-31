@@ -72,35 +72,37 @@ public class PhotoBoardController {
 			
 	}
 
-	@RequestMapping(value = "/write", method=RequestMethod.GET)
+/*	@RequestMapping(value = "/write", method=RequestMethod.GET)
 	public String write(){
 		return "photoboard/write";
-	}
+	}*/
 
 	@RequestMapping(value = "/write", method=RequestMethod.POST)
 	public String write(PhotoBoard photoBoard, HttpSession session){
 		try{
 			String mid = (String)session.getAttribute("login");
 			photoBoard.setBwriter(mid);
-			
-			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
-			
-			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename(); //중복저장이 안되겠금 시간정보를 추가해서 파일로
-			//String realpath = session.getServletContext().getRealPath("/resources/image/"+savedfile); //저장할 파일의 절대 파일 시스템 경로
-			//resources 폴더는 공개되어있기 때문에 WEB-INF를 씀!
-			String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile); //저장할 파일의 절대 파일 시스템 경로
-			photoBoard.getPhoto().transferTo(new File(realpath));
-			photoBoard.setSavedfile(savedfile);
-			
-			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
-			
+			if(photoBoard.getPhoto().getOriginalFilename() != ""){
+				//첨부파일을 넣을 경우
+				photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
+				String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
+				String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile); //저장할 파일의 절대 파일 시스템 경로
+				photoBoard.getPhoto().transferTo(new File(realpath));
+				photoBoard.setSavedfile(savedfile);
+				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());				
+			}else{
+				//첨부파일을 안넣을 경우				
+				photoBoard.setOriginalfile("★defualt.jpeg");
+				photoBoard.setSavedfile("★defualt.jpeg");
+				photoBoard.setMimetype("image/jpeg");				
+			}
 			int result = photoBoardService.write(photoBoard);
 			
 			return "redirect:/photoboard/list";
 			
 		}catch(Exception e){
 			e.printStackTrace();
-			return "photoboard/write";
+			return "redirect:/photoboard/list";
 		}
 	}
 
@@ -153,31 +155,40 @@ public class PhotoBoardController {
    */
 
 	
-	@RequestMapping(value="/modify", method=RequestMethod.GET)
+/*	@RequestMapping(value="/modify", method=RequestMethod.GET)
 	public String modifyForm(int bno, Model model){
 		PhotoBoard photoBoard = photoBoardService.info(bno);
 		model.addAttribute("photoboard", photoBoard);
 		return "photoboard/modify";
-	}
+	}*/
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String modifyForm(PhotoBoard photoBoard, HttpSession session){
 		try{
 			PhotoBoard dbFreeBoard = photoBoardService.info(photoBoard.getBno());
 			photoBoard.setBhitcount(dbFreeBoard.getBhitcount());
-			
-			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
-			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
-			String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile); //저장할 파일의 절대 파일 시스템 경로
-			photoBoard.getPhoto().transferTo(new File(realpath));
-			photoBoard.setSavedfile(savedfile);
-			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
 		
-			photoBoardService.modify(photoBoard);			
+			if(photoBoard.getPhoto().getOriginalFilename() != ""){
+				//첨부파일을 수정할경우
+				photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
+				String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
+				String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile); //저장할 파일의 절대 파일 시스템 경로
+				photoBoard.getPhoto().transferTo(new File(realpath));
+				photoBoard.setSavedfile(savedfile);
+				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());				
+			}else{
+				//첨부파일을 수정 안경우				
+				photoBoard.setOriginalfile(dbFreeBoard.getOriginalfile());
+				photoBoard.setSavedfile(dbFreeBoard.getSavedfile());
+				photoBoard.setMimetype(dbFreeBoard.getMimetype());				
+			}
+			
+			photoBoardService.modify(photoBoard);				
 			return "redirect:/photoboard/list";
+		
 		}catch(Exception e){
 			e.printStackTrace();
-			return "redirect:/";
+			return "redirect:/photoboard/list";
 		}
 	}
 	

@@ -533,7 +533,7 @@
 			                             <div class="form-group">
 			                                 <label class="col-lg-2 control-label">Subject</label>
 			                                 <div class="col-lg-10">
-			                                 	<input type="hidden" name="bno"value="${photoboard.bno}"/>
+			                                 	 <input type="hidden" name="bno" value="${photoboard.bno}"/>
 			                                     <input type="text" placeholder="" name="btitle" id="btitle" class="form-control" value="${photoboard.btitle}">
 			                                 </div>
 			                             </div>
@@ -543,7 +543,6 @@
 			                                     <textarea rows="10" cols="30" class="form-control" id="bcontent" name="bcontent">${photoboard.bcontent}</textarea>
 			                                 </div>
 			                             </div>
-			
 			                             <div class="form-group">
 			                                 <div class="col-lg-offset-2 col-lg-10">
 			                                     <span class="btn green fileinput-button">
@@ -551,7 +550,7 @@
 			                                       <span>Attachment</span>
 			                                       <input type="file" name="photo">
 			                                     </span>
-			                                     <button class="btn btn-send" type="submit">modify</button>
+			                                     <button class="btn btn-send" type="submit">modify</button>&nbsp;&nbsp;기존파일 : ${photoboard.savedfile}
 			                                 </div>
 			                             </div>
 			                         </form>
@@ -583,18 +582,6 @@
 			            </form> -->
 					</div>					
 			        <!-- ---------------------------------------------------------------------- -->
-			        
-
-	
-	<div>
-		<c:if test="${login == photoboard.bwriter}">
-			<a href="modify">[수정]</a>
-			<a href="remove?bno=${photoboard.bno}">[삭제]</a>
-		</c:if>
-		<a href="list">[목록]</a>
-	</div>
-	
-	
 			    	<!-- ---------------------------------------------------------------------- -->
 			        <div class="inbox-body">
 			        	<!-- 내용보기 상단 메뉴 -->	

@@ -24,6 +24,8 @@
 	<beans:bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<!-- 1. 아래처럼 위의 기본정보들 기입하고 -->
 		<beans:property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+<!-- 		<beans:property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+		<beans:property name="user" value="hr"/> -->
 		<beans:property name="jdbcUrl" value="jdbc:oracle:thin:@106.253.56.123:1521:orcl"/>
 		<beans:property name="user" value="kosauser11"/>
 		<beans:property name="password" value="kosa12345"/>
