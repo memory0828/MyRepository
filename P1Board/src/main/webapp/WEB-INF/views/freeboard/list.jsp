@@ -446,7 +446,7 @@
 				font-size: 11px;
 				text-align: center;
 			}
-						
+
 
 			.colorgraph {
 				height: 5px;
@@ -524,29 +524,28 @@
 				
 			        <ul class="inbox-nav inbox-divider">
 			            <li class="active">
-			                <a href="${pageContext.servletContext.contextPath}/freeboard/list"><i class="fa fa-bookmark-o"></i> 자유 게시판 </a>
+			                <a href="${pageContext.servletContext.contextPath}/freeboard/list?pageNo=1"><i class="fa fa-bookmark-o"></i> 자유 게시판 </a>
 			            </li>
 			            <li class="">
-			                <a href="${pageContext.servletContext.contextPath}/photoboard/list"><i class="fa fa-bookmark-o"></i> 사진 게시판 </a>
+			                <a href="${pageContext.servletContext.contextPath}/photoboard/list?pageNo=1"><i class="fa fa-bookmark-o"></i> 사진 게시판 </a>
 			            </li>
 			        </ul>
 			    </aside>
 			    <aside class="lg-side">
+			    	<!-- ---------------------------------------------------------------------- -->
 			        <div class="inbox-head">
 			            <h3>SuzuTeam TextBoard</h3>
-<!-- 			            <form action="#" class="pull-right position">
+		            	<!--<form action="#" class="pull-right position">
 			                <div class="input-append">
 			                    <input type="text" class="sr-input" placeholder="제목 검색">
 			                    <button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
 			                </div>
 			            </form> -->
-			        </div>
+					</div>					
 			        <!-- ---------------------------------------------------------------------- -->
-			        
-			        
-			        
-			        
-			        <div class="inbox-body">
+			        <!-- ---------------------------------------------------------------------- -->
+					<div class="inbox-body">
+			        	<!-- 게시물 상단 메뉴 -->			        
 			           <div class="mail-option">
 			               <div class="btn-group">
 			                   <div class="btn-group">
@@ -554,20 +553,16 @@
 									<a href="#myModalWrite" data-toggle="modal"  title="Compose"    class="btn btn-compose">			                   
 			                           WRITE
 									</a>
-									
-									<!-- <a href="write" data-toggle="modal"  title="Compose" class="btn btn-compose">			                   
-			                           WRITE
-									</a> -->		
 									</c:if>
 			                   </div>
-			               </div>			
+			               </div>
 		
-			               <ul class="unstyled inbox-pagination">
+							<ul class="unstyled inbox-pagination">
 								<li>			               
 									<span>${pageNo} of ${totalPageNo} pages</span>
 								</li>									
 								<li>
-			                   		<span><a href="list?pageNo=1">[처음]</a></span>			                   		
+									<span><a href="list?pageNo=1">[처음]</a></span>			                   		
 								</li>
 								<li>
 									<c:if test="${groupNo>1}">
@@ -575,7 +570,7 @@
 									</c:if>			                   		
 								</li>								
 								<li>
-			                   		<span>
+									<span>
 									<c:forEach var="i" begin="${startPageNo}" end="${endPageNo}">
 									&nbsp;
 										<a href="list?pageNo=${i}"
@@ -592,33 +587,36 @@
 								<li>
 									<span><a href="list?pageNo=${totalPageNo}">[맨끝]</a></span>                   		
 								</li>
-			               </ul>
-			           </div>
-
-		<table class="table table-inbox table-hover">
-           	<tbody>
-               <tr class="">
-                   <td class="inbox-small-cells" style="width: 70px"><center>번호</center></td>
-                   <td class="view-message  dont-show" style="width: 150px;">글쓴이</td>
-                   <td class="view-message">제목</td>
-                   <td class="view-message  inbox-small-cells" style="width: 50px">HIT</td>
-                   <td class="view-message  text-right" style="width: 100px"><center>날짜</center></td>
-               </tr>			              
-             	<!-- 게시물 내용 / start -->
-			<c:forEach var="freeBoard" items="${list}">
-               <tr class="">
-                   <td class="inbox-small-cells"><center>${freeBoard.bno}</center></td>
-                   <td class="view-message dont-show">${freeBoard.bwriter}</td>
-                   <td class="view-message view-message"><a href="info?bno=${freeBoard.bno}">${freeBoard.btitle}</a></td>
-                   <td class="view-message inbox-small-cells">${freeBoard.bhitcount}</td>
-                   <td class="view-message text-right">${freeBoard.bdate}</td>
-               </tr>							
-			</c:forEach>
-           	</tbody>
-		</table>							
+							</ul>
+	           			</div>
+			   			<!-- ./게시물 상단 메뉴 -->
+						<!-- 게시물 출력부분 -->
+						<table class="table table-inbox table-hover">
+				           	<tbody>
+				               <tr class="">
+				                   <td class="inbox-small-cells" style="width: 70px"><center>번호</center></td>
+				                   <td class="view-message  dont-show" style="width: 150px;">글쓴이</td>
+				                   <td class="view-message">제목</td>
+				                   <td class="view-message  inbox-small-cells" style="width: 50px">HIT</td>
+				                   <td class="view-message  text-right" style="width: 100px"><center>날짜</center></td>
+				               </tr>			              
+				             	<!-- 게시물 내용 / start -->
+								<c:forEach var="freeBoard" items="${list}">
+				               <tr class="">
+				                   <td class="inbox-small-cells"><center>${freeBoard.bno}</center></td>
+				                   <td class="view-message dont-show">${freeBoard.bwriter}</td>
+				                   <td class="view-message view-message"><a href="info?bno=${freeBoard.bno}">${freeBoard.btitle}</a></td>
+				                   <td class="view-message inbox-small-cells">${freeBoard.bhitcount}</td>
+				                   <td class="view-message text-right">${freeBoard.bdate}</td>
+				               </tr>							
+								</c:forEach>
+				           	</tbody>
+						</table>
+						<!-- ./게시물 출력부분 -->					
 	
-
-			        </div>
+			        	<!-- ---------------------------------------------------------------------- -->
+			        </div> <!-- ./inbox-body -->
+					<!-- ---------------------------------------------------------------------- -->
 			    </aside>
 			</div>
 		</div>	

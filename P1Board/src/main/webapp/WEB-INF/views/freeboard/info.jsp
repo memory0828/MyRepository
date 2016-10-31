@@ -480,28 +480,27 @@
 			         <a href="<%=pageContext.getServletContext().getContextPath()%>/member/join" data-toggle="modal"  title="Compose"    class="btn btn-compose">
 			             회원가입
 			         </a>				         
-			         </c:if>         
+			         </c:if>
 			         <!-- ModalWrite / 시작 -->
 			         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModalWrite" class="modal fade" style="padding-top:110px; display: none;">
 			             <div class="modal-dialog">
 			                 <div class="modal-content">
 			                     <div class="modal-header">
 			                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-			                         <h4 class="modal-title">글수정</h4>
+			                         <h4 class="modal-title">글쓰기</h4>
 			                     </div>
 			                     <div class="modal-body">
-			                         <form role="form" class="form-horizontal" method="post" action="<%=pageContext.getServletContext().getContextPath()%>/freeboard/modify" >
+			                         <form role="form" class="form-horizontal" method="post" action="<%=pageContext.getServletContext().getContextPath()%>/freeboard/write" >
 			                             <div class="form-group">
 			                                 <label class="col-lg-2 control-label">Subject</label>
 			                                 <div class="col-lg-10">
-			                                 	<input type="hidden" name="bno"value="${freeboard.bno}"/>
-			                                     <input type="text" placeholder="" value="${freeboard.btitle}" name="btitle" id="btitle" class="form-control"> 
+			                                     <input type="text" placeholder=""  name="btitle" id="btitle" class="form-control">
 			                                 </div>
 			                             </div>
 			                             <div class="form-group">
 			                                 <label class="col-lg-2 control-label">Content</label>
 			                                 <div class="col-lg-10">
-			                                     <textarea rows="10" cols="30" class="form-control" id="bcontent" name="bcontent">${freeboard.bcontent}</textarea>
+			                                     <textarea rows="10" cols="30" class="form-control" id="bcontent" name="bcontent"></textarea>
 			                                 </div>
 			                             </div>
 			
@@ -521,21 +520,62 @@
 			             </div><!-- /.modal-dialog -->
 			         </div><!-- /.modal -->
 			         <!-- ModalWrite / 종료 -->
+			         <!-- ModalModify / 시작 -->
+			         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModalModify" class="modal fade" style="padding-top:110px; display: none;">
+			             <div class="modal-dialog">
+			                 <div class="modal-content">
+			                     <div class="modal-header">
+			                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                         <h4 class="modal-title">Modify</h4>
+			                     </div>
+			                     <div class="modal-body">
+			                         <form role="form" class="form-horizontal" method="post" action="<%=pageContext.getServletContext().getContextPath()%>/freeboard/modify" >
+			                             <div class="form-group">
+			                                 <label class="col-lg-2 control-label">Subject</label>
+			                                 <div class="col-lg-10">
+			                                 	<input type="hidden" name="bno"value="${freeboard.bno}"/>
+			                                     <input type="text" placeholder="" value="${freeboard.btitle}" name="btitle" id="btitle" class="form-control"> 
+			                                 </div>
+			                             </div>
+			                             <div class="form-group">
+			                                 <label class="col-lg-2 control-label">Content</label>
+			                                 <div class="col-lg-10">
+			                                     <textarea rows="10" cols="30" class="form-control" id="bcontent" name="bcontent">${freeboard.bcontent}</textarea>
+			                                 </div>
+			                             </div>
+			
+			                             <div class="form-group">
+			                                 <div class="col-lg-offset-2 col-lg-10">
+ 			                                     <!--<span class="btn green fileinput-button">
+			                                       <i class="fa fa-plus fa fa-white"></i>
+			                                       <span>Image Attachment</span>
+			                                       <input type="file" name="files[]" multiple="">
+			                                     </span> -->
+			                                     <button class="btn btn-send" type="submit">modify</button>
+			                                 </div>
+			                             </div>
+			                         </form>
+			                     </div>
+			                 </div><!-- /.modal-content -->
+			             </div><!-- /.modal-dialog -->
+			         </div><!-- /.modal -->
+			         <!-- ModalModify / 종료 -->
 				</div>
 				
 			        <ul class="inbox-nav inbox-divider">
 			            <li class="active">
-			                <a href="${pageContext.servletContext.contextPath}/freeboard/list"><i class="fa fa-bookmark-o"></i> 자유 게시판 </a>
+			                <a href="${pageContext.servletContext.contextPath}/freeboard/list?pageNo=1"><i class="fa fa-bookmark-o"></i> 자유 게시판 </a>
 			            </li>
 			            <li class="">
-			                <a href="${pageContext.servletContext.contextPath}/photoboard/list"><i class="fa fa-bookmark-o"></i> 사진 게시판 </a>
+			                <a href="${pageContext.servletContext.contextPath}/photoboard/list?pageNo=1"><i class="fa fa-bookmark-o"></i> 사진 게시판 </a>
 			            </li>
 			        </ul>
 			    </aside>
 			    <aside class="lg-side">
+			    	<!-- ---------------------------------------------------------------------- -->			    
 			        <div class="inbox-head">
 			            <h3>SuzuTeam TextBoard</h3>
-<!-- 			            <form action="#" class="pull-right position">
+		            	<!--<form action="#" class="pull-right position">
 			                <div class="input-append">
 			                    <input type="text" class="sr-input" placeholder="제목 검색">
 			                    <button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
@@ -543,55 +583,57 @@
 			            </form> -->
 			        </div>
 			        <!-- ---------------------------------------------------------------------- -->
-			        
-
+			    	<!-- ---------------------------------------------------------------------- -->
 			        <div class="inbox-body">
+			        	<!-- 내용보기 상단 메뉴 -->	
 			           <div class="mail-option">
 			               <div class="btn-group">
 			               
 								<c:if test="${login == freeboard.bwriter}">			               
 			                   <div class="btn-group">
 			                   <%-- href="modify?bno=${freeboard.bno}"  --%>
-                   					<a href="#myModalWrite" data-toggle="modal"  title="Compose"    class="btn btn-compose">			                   
-			                           수정
+                   					<a href="#myModalModify" data-toggle="modal"  title="Compose"    class="btn btn-compose">			                   
+			                           modify
 									</a>		
 			                   </div>
 			                   <div class="btn-group">
 									<a href="remove?bno=${freeboard.bno}" class="btn btn-compose">			                   
-			                           삭제
+			                           delete
 									</a>									
 			                   </div>
 								</c:if>
 			                   <div class="btn-group">
 									<a href="list" class="btn btn-compose">			                   
-			                           목록
+			                           list
 									</a>									
 			                   </div>
 			               </div>			
 			               <ul class="unstyled inbox-pagination">
 								<li>			               
-									<span>게시물 보기</span>
+									<span>${freeboard.bno} 게시물 보기</span>
 								</li>									
 			               </ul>
 			           </div>
-	
-
-		<table class="table table-inbox table-hover">
-           	<tbody>
-               <tr class="">
-					<td>${freeboard.bno}</td>
-					<td>${freeboard.btitle}</td>
-					<td>${freeboard.bwriter}</td>
-					<td>${freeboard.bhitcount}</td>
-					<td>${freeboard.bdate}</td>
-			   </tr>
-				<tr>
-				<!-- style="background-color: orange; width:70px" -->
-					<td colspan = "5" >${freeboard.bcontent}</td>									
-				</tr>
-           	</tbody>
-		</table>	
-			        </div>
+						<!-- ./내용보기 상단 메뉴 -->
+						<!-- 게시물 상세내용 출력부분 -->
+						<table class="table table-inbox" style="width: 820px;">
+				           	<tbody style="width: 820px;" >
+				               <tr class=""  style="width: 700px;">
+									<td style="width: 10px"></td>
+									<td >${freeboard.btitle}</td>
+									<td  style="width: 100px;">${freeboard.bwriter}</td>
+									<td style="width: 50px;">${freeboard.bhitcount}</td>
+									<td style="width: 100px" >${freeboard.bdate}</td>
+							   </tr>
+								<tr class="">
+									<td colspan = "5" style="height: 440px"><pre style="white-space: pre-wrap; height:100%">${freeboard.bcontent}</pre></td>									
+								</tr>
+				           	</tbody>
+						</table>	
+						<!-- ./게시물 상세내용 출력부분 -->
+			        	<!-- ---------------------------------------------------------------------- -->				
+			        </div> <!-- ./inbox-body -->
+					<!-- ---------------------------------------------------------------------- -->			        
 			    </aside>
 			</div>
 		</div>	

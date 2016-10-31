@@ -45,7 +45,7 @@ public class PhotoBoardController {
 		}
 		session.setAttribute("pageNo", String.valueOf(intPageNo));
 		
-		int rowsPerPage = 8;
+		int rowsPerPage = 15;
 		int pagesPerGroup = 5;
 		
 		int totalBoardNo = photoBoardService.getCount();
@@ -173,11 +173,11 @@ public class PhotoBoardController {
 			photoBoard.setSavedfile(savedfile);
 			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
 		
-			photoBoardService.modify(photoBoard);
+			photoBoardService.modify(photoBoard);			
 			return "redirect:/photoboard/list";
 		}catch(Exception e){
 			e.printStackTrace();
-			return "photoboard/modify";
+			return "redirect:/";
 		}
 	}
 	
