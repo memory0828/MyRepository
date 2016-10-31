@@ -91,7 +91,7 @@ public class FreeBoardDao {
 		} );
 		return list;
 	}
-	
+
 	public int count() {
 		String sql="select count(*) from freeboard";
 		//.queryForObject는

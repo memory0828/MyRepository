@@ -465,11 +465,28 @@
 	<div class="container">
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'> 
 		<div class="mail-box">
-			 <aside class="sm-side">		     
+			 <aside class="sm-side">
+			     <!-- 로그인 정보 / 시작 -->
+				 <c:if test="${login != null}">	
+			     <div class="user-head">
+			     	<a class="inbox-avatar" href="javascript:;">
+					<img  width="64" hieght="60" src="<%=pageContext.getServletContext().getContextPath()%>/resources/photoprofil/★dprofile.jpg"></a>
+					</a>
+			         <div class="user-name">
+			             <h5><a href="#">${login}</a></h5>
+			             <span><a href="#">We welcome your visit</a></span>
+			         </div>
+			     </div>
+				</c:if> 
+			     <!-- 로그인 정보 / 종료 -->    
  			     <div class="inbox-body">
 					 <c:if test="${login != null}">		
 			         <a href="#myModalWrite" data-toggle="modal"  title="Compose"    class="btn btn-compose">
 			             글쓰기
+			         </a>
+			         &nbsp;
+			         <a href="<%=pageContext.getServletContext().getContextPath()%>/member/logout" data-toggle="modal"  title="Compose"    class="btn btn-compose">
+			             로그아웃
 			         </a>
 			         </c:if>    			         
 					 <c:if test="${login == null}">			         
@@ -625,7 +642,7 @@
 									<td style="width: 100px" >${photoboard.bdate}</td>
 							   </tr>
 								<tr class="">
-									<td colspan = "3" style="width:300px; height: 440px"><img src="showPhoto?savedfile=${photoboard.savedfile}"width="500px"/></td>									
+									<td colspan = "3" style="width:300px; height: 440px"><img src="showPhoto?savedfile=${photoboard.savedfile}" width="100%" height="395px"/></td>									
 									<td colspan = "2" style="height: 440px"><pre style="white-space: pre-wrap; width:300px; height:100%">${photoboard.bcontent}</pre></td>
 								</tr>
 				           	</tbody>

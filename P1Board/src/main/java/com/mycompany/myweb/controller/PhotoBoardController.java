@@ -45,7 +45,7 @@ public class PhotoBoardController {
 		}
 		session.setAttribute("pageNo", String.valueOf(intPageNo));
 		
-		int rowsPerPage = 15;
+		int rowsPerPage = 8;
 		int pagesPerGroup = 5;
 		
 		int totalBoardNo = photoBoardService.getCount();
