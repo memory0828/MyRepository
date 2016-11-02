@@ -5,7 +5,7 @@
 	<meta charset = "UTF-8">
 </head>
 <body>
-	 JavaScript
+	JavaScript
 	<hr/>
 	1. <a href="01_datatype.jsp">데이타 타입</a> - 16/11/02<br/>
 	2. <a href="02_function.jsp">함수 선언</a> - 16/11/02<br/>	
@@ -15,6 +15,7 @@
 	6. <a href="06_math_method.jsp">수학 관련 메소드</a> - 16/11/02<br/>
 	7. <a href="07_date.jsp">날짜 얻기</a> - 16/11/02<br/>
 	8. <a href="08_array.jsp">배열(=자바스크립는 리스트와 같은 특징을 가짐)</a> - 16/11/02<br/>
-	
+	9. <a href="09_object.jsp">객체</a> - 16/11/02<br/>
+	10. <a href="10_dom.jsp">DOM 사용</a> - 16/11/02<br/>
 </body>
 </html>
