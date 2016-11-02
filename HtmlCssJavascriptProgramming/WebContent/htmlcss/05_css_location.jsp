@@ -1,13 +1,13 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page pageEncoding = "EUC-KR" %>
 <!DOCTYPE html>
 <html> 
 <head> 
+	<meta charset = "UTF-8">
 	<meta charset ="UTF-8">
-	<!-- 1. External Style Sheet : Á¦ÀÏ ¸¹ÀÌ »ç¿ëÇÏ´Â ¹æ¹ý -->
+	<!-- 1. External Style Sheet : ì œì¼ ë§Žì´ ì‚¬ìš©í•˜ëŠ” ë°©ë²• -->
  	<link rel="stylesheet" type="text/css" href="05_style.css">
  	
- 	<!-- 2. Internal Style Sheet : ÇÁ·¹ÀÓ¿öÅ©¿¡¼­ »ç¿ëÇÏ´Â ¹æ¹ý -->
+ 	<!-- 2. Internal Style Sheet : í”„ë ˆìž„ì›Œí¬ì—ì„œ ì‚¬ìš©í•˜ëŠ” ë°©ë²• -->
 	<style type="text/css">
 		.menu {
 			background-color: #ffffff;
@@ -20,11 +20,12 @@
 </head>
 <body>
 	CSS Location
+	<br><a href="index.jsp">indexë¡œ</a>
 	<hr/>
 	
-	<header>Á¦¸ñ</header>
-	<p>³»¿ë</p>
-	<a href="http://www.naver.com">ÅèÄÏ</a>
+	<header>ì œëª©</header>
+	<p>ë‚´ìš©</p>
+	<a href="http://www.naver.com">í†°ì¼“</a>
 	
 	<div class="menu">
 	<ul>
@@ -34,7 +35,7 @@
 	</ul>
 	</div>
 
- 	<!-- 3. In-Line Style Sheet : ±×³É ºü¸£°Ô ¾²´Â »ç¶÷µé..¿ë -->
- 	<div style="background-color: yellow; text-align: center;">º»¹® ³»¿ëÀÔ´Ï´Ù</div>
+ 	<!-- 3. In-Line Style Sheet : ê·¸ëƒ¥ ë¹ ë¥´ê²Œ ì“°ëŠ” ì‚¬ëžŒë“¤..ìš© -->
+ 	<div style="background-color: yellow; text-align: center;">ë³¸ë¬¸ ë‚´ìš©ìž…ë‹ˆë‹¤</div>
 </body>
 </html>

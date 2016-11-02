@@ -1,36 +1,37 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page pageEncoding = "EUC-KR" %>
 <!DOCTYPE html>
 <html> 
 <head> 
 	<meta charset = "UTF-8">
 	<style type="text/css">
-		/* * { color:red; } */ /* ÀüºÎ */
-		div { background-color: yellow }  /*div ÅÂ±× ÀüºÎ */
-		/*# = id´Â À¯ÀÏÇÑ°ª
-		  .  = class´Â ±×·ìÀ» ¹­±âÀ§ÇÑ°Í*/
-		#div2 { background-color: aqua } /*#ÀÌ ºÙÀ¸¸é idÀÇ ÀÌ¸§ÀÌ ÀÌ°ÅÀÎ°Å */
-		.div3 { background-color:olive } /* .ÀÌ ºÙÀ¸¸é class(¹­À½)ÀÇ ÀÌ¸§ÀÌ ÀÌ°ÅÀÎ°Å */
+		/* * { color:red; } */ /* ì „ë¶€ */
+		div { background-color: yellow }  /*div íƒœê·¸ ì „ë¶€ */
+		/*# = idëŠ” ìœ ì¼í•œê°’
+		  .  = classëŠ” ê·¸ë£¹ì„ ë¬¶ê¸°ìœ„í•œê²ƒ
+		  	 idê°€ classë³´ë‹¤ ìš°ì„ ìˆœìœ„ê°€ ë” ë†’ìŒ*/
+		#div2 { background-color: aqua } /*#ì´ ë¶™ìœ¼ë©´ idì˜ ì´ë¦„ì´ ì´ê±°ì¸ê±° */
+		.div3 { background-color:olive } /* .ì´ ë¶™ìœ¼ë©´ class(ë¬¶ìŒ)ì˜ ì´ë¦„ì´ ì´ê±°ì¸ê±° */
 		
-		#div, #p, #h1 { background-color: orange;} /* ÀÌ·¸°Ô ³ª¿­ÇÒ¼öµµÀÖÀ½ */
+		#div, #p, #h1 { background-color: orange;} /* ì´ë ‡ê²Œ ë‚˜ì—´í• ìˆ˜ë„ìˆìŒ */
 		
-		#div5 p { background-color: blue } /* div5 ¾È¿¡ ÀÖ´Â ¸ğµç p */
-		#div6 > p { background-color: fuchsia; }  /*div6 ÀÌ°Å ¹Ù·Î ¹Ø¿¡ ÀÖ´Â p */
+		#div5 p { background-color: blue } /* div5 ì•ˆì— ìˆëŠ” ëª¨ë“  p */
+		#div6 > p { background-color: fuchsia; }  /*div6 ì´ê±° ë°”ë¡œ ë°‘ì— ìˆëŠ” p */
 		
-		[checked] { color: green } /* []´Â ÀÌ ¾È¿¡ µé¾î°£ ¼Ó¼ºÀ» °¡Áø ¸ğµç ¿¤¸®¸ÕÆ®µé */
-		[selected=true] { color: green } /* []´Â ÀÌ ¾È¿¡ µé¾î°£ ¼Ó¼º Áß ±× °ªÀÌ true°ªÀ» °¡Áø ¿¤¸®¸ÕÆ®µé */
+		[checked] { color: green } /* []ëŠ” ì´ ì•ˆì— ë“¤ì–´ê°„ ì†ì„±ì„ ê°€ì§„ ëª¨ë“  ì—˜ë¦¬ë¨¼íŠ¸ë“¤ */
+		[selected=true] { color: green } /* []ëŠ” ì´ ì•ˆì— ë“¤ì–´ê°„ ì†ì„± ì¤‘ ê·¸ ê°’ì´ trueê°’ì„ ê°€ì§„ ì—˜ë¦¬ë¨¼íŠ¸ë“¤ */
 		
-		#form1 [checked] { background-color: red } /* id°¡ form1ÀÎ °Í ¾È¿¡ ÀÖ´Â checkedÀ» °¡Áø°Íµé È°¿ëÇØ¼­ Á¶ÇÕÇØº½ */
+		#form1 [checked] { background-color: red } /* idê°€ form1ì¸ ê²ƒ ì•ˆì— ìˆëŠ” checkedì„ ê°€ì§„ê²ƒë“¤ í™œìš©í•´ì„œ ì¡°í•©í•´ë´„ */
 		
 		a {color : black; text-decoration: none;  } 
-		a:active { color:red } /* ¸µÅ©¸¦ Å¬¸¯ ÇßÀ»¶§ */
-		a:link { color:green } /* ¸µÅ©°¡ ÇÑ¹øµµ ¹æ¹®ÇÑÀûÀÌ ¾ø´Â */
-		a:hover { color:blue; text-decoration: underline; } /* ¸µÅ©¿¡ ¸¶¿ì½º ¿Ã¸°°Å */
+		a:active { color:red } /* ë§í¬ë¥¼ í´ë¦­ í–ˆì„ë•Œ */
+		a:link { color:green } /* ë§í¬ê°€ í•œë²ˆë„ ë°©ë¬¸í•œì ì´ ì—†ëŠ” */
+		a:hover { color:blue; text-decoration: underline; } /* ë§í¬ì— ë§ˆìš°ìŠ¤ ì˜¬ë¦°ê±° */
 
 	</style> 
 </head>
 <body>
-	CSS ¼±ÅÃÀÚ
+	CSS ì„ íƒì
+	<br><a href="index.jsp">indexë¡œ</a>
 	<hr/>
 	<div>A</div>
 	<div id="div2">B</div>
@@ -74,8 +75,8 @@
 	
 
 	<div style="background-color: white">
-		<a href="http://www.naver.com">³×ÀÌ¹ö</a><br/>
-		<a href="http://www.nave1r.com">ÅèÄ¹</a><br/>
+		<a href="http://www.naver.com">ë„¤ì´ë²„</a><br/>
+		<a href="http://www.nave1r.com">í†°ìº£</a><br/>
 	</div>
 	
 

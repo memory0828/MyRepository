@@ -1,9 +1,8 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page pageEncoding = "EUC-KR" %>
 <!DOCTYPE html>
 <html> 
 <head> 
-	<meta charset ="UTF-8">
+	<meta charset = "UTF-8">
 	<style type="text/css">
 		body {
 			background-image: url("../common/image/naver.gif");
@@ -20,7 +19,8 @@
 	</style>
 </head>
 <body>
-	background °ü·Ã CSS ¼Ó¼º
+	background ê´€ë ¨ CSS ì†ì„±
+	<br><a href="index.jsp">indexë¡œ</a>
 	<hr/>
 	<%for(int i=0; i<=10; i++) { %>
 		<div class="album">

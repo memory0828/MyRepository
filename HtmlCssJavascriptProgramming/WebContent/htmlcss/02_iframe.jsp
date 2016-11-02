@@ -1,15 +1,15 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page pageEncoding = "EUC-KR" %> <!-- 1¹øÀÇ¿ªÇÒ¸¸ ´ã´ç -->
 <!DOCTYPE html>
 <html> 
 <head> 
 	<meta charset = "UTF-8"> 
 </head>
 <body>
-	IFrame(ÀÎ¶óÀÎ¿ä¼Ò)
+	IFrame(ì¸ë¼ì¸ìš”ì†Œ)
+	<br><a href="index.jsp">indexë¡œ</a>
 	<hr/>
-	»ó´Ü ³»¿ë
+	ìƒë‹¨ ë‚´ìš©
 	<iframe src="http://tomcat.apache.org" width="300px"></iframe>
-	ÇÏ´Ü ³»¿ë
+	í•˜ë‹¨ ë‚´ìš©
 </body>
 </html>

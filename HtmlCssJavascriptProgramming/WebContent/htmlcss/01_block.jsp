@@ -1,26 +1,26 @@
 <%@ page contentType = "text/html;charset=UTF-8" %>
-<%@ page pageEncoding = "EUC-KR" %> <!-- 1¹øÀÇ¿ªÇÒ¸¸ ´ã´ç -->
 <!DOCTYPE html>
 <html> 
 <head> 
 	<meta charset = "UTF-8"> 
 </head>
 <body>
-	¿¤¸®¸ÕÆ®(ÅÂ±×)
+	ì—˜ë¦¬ë¨¼íŠ¸(íƒœê·¸)
+	<br><a href="index.jsp">indexë¡œ</a>
 	<hr/>
 	
 	<h1>Block</h1>
 	<div style="background-color: #ff0000; height:50px; border:1px solid green"></div>
 	<div style="background-color: #0000ff; height:50px; border:1px solid yellow"></div>
-	<h1 style="background-color: #0000ff; height:50px; border:1px solid yellow">Á¦¸ñ</h1>
-	<p style="background-color: #0000ff; height:50px; border:1px solid yellow">³»¿ë</p>
+	<h1 style="background-color: #0000ff; height:50px; border:1px solid yellow">ì œëª©</h1>
+	<p style="background-color: #0000ff; height:50px; border:1px solid yellow">ë‚´ìš©</p>
 	<form style="background-color: #0000ff; height:50px; border:1px solid yellow"></form>
 	
 	<h1>In-Line</h1>
 	<span style="color:red; border:1px solid yellow">Inportant</span>
 	<span style="color:green">Inportant</span>
 	<span style="color:blue">Inportant</span>
-	<img src="../common/image/naver.gif" style="border:1px solid yellow"/><!-- »ó´ë°æ·Î -->
+	<img src="../common/image/naver.gif" style="border:1px solid yellow"/><!-- ìƒëŒ€ê²½ë¡œ -->
 	
 	<h1>Block -> Inline</h1>
 	<div style="height:50px; width:200px; border:1px solid green; display:inline-block;"></div>
