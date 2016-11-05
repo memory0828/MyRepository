@@ -42,7 +42,7 @@ public class FreeBoardController {
 		session.setAttribute("pageNo", String.valueOf(intPageNo));
 		
 		int rowsPerPage = 10;
-		int pagesPerGroup = 5;
+		int pagesPerGroup = 10;
 		
 		int totalBoardNo = freeBoardService.getCount();
 		int totalPageNo = totalBoardNo/rowsPerPage + ((totalBoardNo%rowsPerPage!=0)?1:0);

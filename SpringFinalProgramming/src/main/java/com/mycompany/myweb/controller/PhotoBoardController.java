@@ -46,7 +46,7 @@ public class PhotoBoardController {
 		session.setAttribute("pageNo", String.valueOf(intPageNo));
 		
 		int rowsPerPage = 8;
-		int pagesPerGroup = 5;
+		int pagesPerGroup = 10;
 		
 		int totalBoardNo = photoBoardService.getCount();
 		int totalPageNo = totalBoardNo/rowsPerPage + ((totalBoardNo%rowsPerPage!=0)?1:0);
@@ -104,6 +104,7 @@ public class PhotoBoardController {
 		}
 	}
 
+	
 	@RequestMapping("/showPhoto")
 	public void showPhoto(String savedfile, HttpServletRequest request, HttpServletResponse response) {
 		try{
@@ -160,26 +161,40 @@ public class PhotoBoardController {
 		return "photoboard/modify";
 	}
 	
+
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String modifyForm(PhotoBoard photoBoard, HttpSession session){
 		try{
 			PhotoBoard dbFreeBoard = photoBoardService.info(photoBoard.getBno());
 			photoBoard.setBhitcount(dbFreeBoard.getBhitcount());
-			
-			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
-			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
-			String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile); //저장할 파일의 절대 파일 시스템 경로
-			photoBoard.getPhoto().transferTo(new File(realpath));
-			photoBoard.setSavedfile(savedfile);
-			photoBoard.setMimetype(photoBoard.getPhoto().getContentType());
 		
-			photoBoardService.modify(photoBoard);
+			if(photoBoard.getPhoto().getOriginalFilename() != ""){
+				//첨부파일을 수정할경우
+				photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
+				String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
+				String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile); //저장할 파일의 절대 파일 시스템 경로
+				photoBoard.getPhoto().transferTo(new File(realpath));
+				photoBoard.setSavedfile(savedfile);
+				photoBoard.setMimetype(photoBoard.getPhoto().getContentType());				
+			}else{
+				//첨부파일을 수정 안경우				
+				photoBoard.setOriginalfile(dbFreeBoard.getOriginalfile());
+				photoBoard.setSavedfile(dbFreeBoard.getSavedfile());
+				photoBoard.setMimetype(dbFreeBoard.getMimetype());				
+			}
+			
+			photoBoardService.modify(photoBoard);				
 			return "redirect:/photoboard/list";
+		
 		}catch(Exception e){
 			e.printStackTrace();
 			return "photoboard/modify";
 		}
 	}
+	
+	
+	
+	
 	
 	@RequestMapping("/remove")
 	public String remove(int bno){

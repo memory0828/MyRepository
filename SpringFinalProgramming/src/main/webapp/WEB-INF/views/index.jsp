@@ -6,18 +6,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap core CSS -->
-<link
-	href="<%=pageContext.getServletContext().getContextPath()%>/resources/bootstrap-3.3.7/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=pageContext.getServletContext().getContextPath()%>/resources/css/justified-nav.css"
-	rel="stylesheet">
+<link href="<%=pageContext.getServletContext().getContextPath()%>/resources/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=pageContext.getServletContext().getContextPath()%>/resources/css/justified-nav.css" rel="stylesheet">
 <!-- jquery추가하기 -->
-<script type="text/javascript"
-	src="<%=pageContext.getServletContext().getContextPath()%>/resources/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="<%=pageContext.getServletContext().getContextPath()%>/resources/js/jquery-1.12.4.min.js"></script>
 <!-- 부트스트랩 jquery추가하기 -->
-<script type="text/javascript"
-	src="<%=pageContext.getServletContext().getContextPath()%>/resources/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=pageContext.getServletContext().getContextPath()%>/resources/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$("nav li").on("click", function() {
@@ -51,18 +45,22 @@
 		});
 	})
 </script>
+<script type="text/javascript">
 
+
+
+</script>
 
 </head>
 
 <body style="background-image: url(<%=pageContext.getServletContext().getContextPath()%>/resources/image/pattern.jpg)" >
 	<div class="container">
-		<div class="masthead">
-			<h3 class="text-muted">Yu Ho Seon</h3>
+		<div class="masthead"  >
+			<h3 class="text-muted" style="margin-top: 0px;">SuzuBoard</h3>
 			<nav>
 				<ul class="nav nav-justified">
 					<li class="active"><a target="iframe" href="<%=pageContext.getServletContext().getContextPath()%>/home">Home</a></li>
-					<li><a target="iframe" href="<%=pageContext.getServletContext().getContextPath()%>/member/login">Login</a></li>
+					<li><a target="iframe" href="<%=pageContext.getServletContext().getContextPath()%>/member/login">Member</a></li>
 					<li><a target="iframe" href="${pageContext.servletContext.contextPath}/freeboard/list">Free Board</a></li>
 					<li><a target="iframe" href="${pageContext.servletContext.contextPath}/photoboard/list">Photo Board</a></li>
 				</ul>
@@ -80,22 +78,26 @@
 			</p>
 		</div>
 		--%>
-		<iframe name="iframe" style="width:100%; height: 400px; border-width: 0px; " src="home"  scrolling="no" onload="resizeIframe(this)"></iframe>
-		<script>
+		<script> 
 		  function resizeIframe(obj) {
+			  
+			  console.log(obj.contentWindow.document.body.scrollHeight);
 		    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
 		  }
 		</script>
+		<iframe name="iframe" style="width:100%; border-width: 0px; " src="home" scrolling="no" onLoad="resizeIframe(this);"></iframe>
+		
+
 
 		<!-- 하단부분 -->
-		<div class="row" style="background-color: #292929; color:white;">
+		<div class="row" style="background-color: #292929; color:white; margin-right: 5px; margin-left: 5px">
 			<div class="col-lg-4">
 				<h2>회원 서비스</h2>
 				<p>회원 가입</p>
 				<p>로그인</p>
 				<p>로그아웃</p>
 				<p>
-					<a class="btn btn-primary" href="#" role="button">자세한 설명
+					<a class="btn btn-primary" target="iframe"  href="<%=pageContext.getServletContext().getContextPath()%>/member/login" role="button">자세한 설명
 						&raquo;</a>
 				</p>
 			</div>
@@ -107,7 +109,7 @@
 				<p>게시물 수정</p>
 				<p>게시물 삭제</p>
 				<p>
-					<a class="btn btn-primary" href="#" role="button">자세한 설명
+					<a class="btn btn-primary" target="iframe"  href="${pageContext.servletContext.contextPath}/freeboard/list" role="button">자세한 설명
 						&raquo;</a>
 				</p>
 			</div>
@@ -119,16 +121,15 @@
 				<p>게시물 수정</p>
 				<p>게시물 삭제</p>
 				<p>
-					<a class="btn btn-primary" href="#" role="button">자세한 설명
+					<a class="btn btn-primary" target="iframe"  href="${pageContext.servletContext.contextPath}/photoboard/list" role="button">자세한 설명
 						&raquo;</a>
 				</p>
 			</div>
 		</div>
 
-		<footer class="footer">
+		<footer class="footer" style="margin:0px; padding: 10px;">
 			<p>&copy; 2016 Company, Inc.</p>
 		</footer>
-
 	</div>
 
 </body>

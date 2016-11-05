@@ -37,7 +37,7 @@ public class MemberController {
 			return "member/loginForm";
 		}else {
 			session.setAttribute("login",  mid);
-			return "redirect:/";
+			return "redirect:/member/login";
 		}	
 	}
 	
@@ -79,7 +79,7 @@ public class MemberController {
 		if(result == MemberService.LOGOUT_SUCCESS) {
 			session.removeAttribute("login");
 		}
-		return "redirect:/";
+		return "redirect:/member/login";
 	}
 
 	@RequestMapping("/info")

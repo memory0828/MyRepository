@@ -105,5 +105,15 @@
 <colUsage columnID="6E7BFA22-4293-A49A-9373-B3F9716DDC9D"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="28D6A2D8-738A-54DB-D7CF-253D45A25D01" name="member_UK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-05 07:07:43 UTC</createdTime>
+<ownerDesignName>02 table</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2AE4F20C-B7E4-7F43-5AC7-6FE4292BC0D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
 </indexes>
 </Table>
