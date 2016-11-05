@@ -13,5 +13,6 @@
 	3. <a href="03_ready_event..jsp">ready 이벤트 처리</a> - 16/11/03<br/>
 	4. <a href="04_find_object.jsp">객체 찾기 - 책p81</a> - 16/11/03<br/>
 	5. <a href="05_event_handling.jsp">이벤트 처리</a> - 16/11/03<br/>
+	6. <a href="06_ajax.jsp">ajax(Asynchronous JavaScript and XML, 에이잭스) 통신</a> - 16/11/04<br/>
 </body>
 </html>
