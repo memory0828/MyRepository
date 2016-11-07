@@ -10,7 +10,7 @@
 <link href="<%=pageContext.getServletContext().getContextPath()%>/resources/css/justified-nav.css" rel="stylesheet">
 <!-- jquery추가하기 -->
 <script type="text/javascript" src="<%=pageContext.getServletContext().getContextPath()%>/resources/js/jquery-1.12.4.min.js"></script>
-<!-- 부트스트랩 jquery추가하기 -->
+<!-- 부트스트랩 jquery추가하기1 -->
 <script type="text/javascript" src="<%=pageContext.getServletContext().getContextPath()%>/resources/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
