@@ -31,7 +31,7 @@
 	<hr/>         
 	<!-- 동적으로 context알아내는 방법1 표현식 방법 사용 -->
 	1.
-	<c:if test="${login == null}">
+	<c:if test="${login == null}" >
 	<a href="<%=pageContext.getServletContext().getContextPath()%>/member/login">로그인</a></br>
 	</c:if>
 	<c:if test="${login != null}">
