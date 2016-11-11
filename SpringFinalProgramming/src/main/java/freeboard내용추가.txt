@@ -15,6 +15,7 @@ public class Test {
 			pstmt.setString(3, "user1");
 			pstmt.executeUpdate();
 		}
+		
 		pstmt.close();
 		conn.close();
 	}
