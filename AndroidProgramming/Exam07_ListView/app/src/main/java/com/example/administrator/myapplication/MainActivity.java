@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         lightList = (ListView)findViewById(R.id.lightList);
         fillItems();
     }
 
     public void fillItems(){
 
+        //데이터를 만드는 부분
         List<Light> list = new ArrayList<>();
         list.add(new Light(R.drawable.light1, "인테리어 조명1", "거실등으로 사용하자"));
         list.add(new Light(R.drawable.light2, "인테리어 조명2", "거실등으로 사용하자"));

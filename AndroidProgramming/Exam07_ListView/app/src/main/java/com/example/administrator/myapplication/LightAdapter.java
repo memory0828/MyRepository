@@ -75,8 +75,12 @@ public class LightAdapter extends BaseAdapter { //BaseAdapter는 추상메소다
     public View getView(int position, View convertView, ViewGroup parent)
     {
         //light_item.xml에 있는 것을 인플레이션해서 Light 데이터를 셋팅하고 리턴해주는 메소드
-        //View convertView : light_item.xml를 가지로 인플레이션 한거, 최초 처음 인플레이션을 만드는 동안에는 null이 들어오고, 추후 재사용할게 발생하면 그 인플레이션한게 들어옴
-        //ViewGroup parent : 대상이 되는 리스트뷰
+
+        //이 메소드는 리스트안에 들어가는 객체의 수만큼 호출됨, 즉,
+        //int position : 1->2->3 식으로 들어옴
+        //View convertView : null이 들어오고 안들어오고(재사용이냐 아니냐에 따라 )
+        //                   light_item.xml를 가지로 인플레이션 한거, 최초 처음 인플레이션을 만드는 동안에는 null이 들어오고, 추후 재사용할게 발생하면 그 인플레이션한게 들어옴
+        //ViewGroup parent : 대상이 되는 리스트뷰(이 리스트가 적용되는 어뎁터뷰)
 
         //■ 재사용할수있는 객체가 들어오면 인플레이션을 할 필요없고
         //   null이들어오면 처음 생성단계니깐 인플레이션으로 만들어서 써야함
@@ -91,13 +95,13 @@ public class LightAdapter extends BaseAdapter { //BaseAdapter는 추상메소다
         //데이터 셋팅 data setting
         Light light = list.get(position); //데이터
         ImageView lightImage = (ImageView) convertView.findViewById(R.id.lightImage);
-        lightImage.setImageResource(light.getImage());
+        lightImage.setImageResource(light.getImage()); //light.getImage() : light객체(데이터) 안에있는 이미지를 반환
 
         TextView lightTitle = (TextView) convertView.findViewById(R.id.lightTitle);
-        lightTitle.setText(light.getTitle());
+        lightTitle.setText(light.getTitle());  //light.getTitle() : light객체(데이터) 안에있는 텍스트를 반환
 
         TextView lightContent = (TextView) convertView.findViewById(R.id.lightContent);
-        lightContent.setText(light.getContent());
+        lightContent.setText(light.getContent());  //light.getContent() : light객체(데이터) 안에있는 텍스트를 반환
 
         return convertView;
     }
