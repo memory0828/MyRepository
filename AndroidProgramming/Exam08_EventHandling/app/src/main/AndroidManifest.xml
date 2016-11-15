@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.myapplication">
+    <!--패키지 명은 어플리케이션 식별 명!
+        package="com.example.administrator.myapplication"> : 이 어플리케이션을 다른 어플리케이션과 식별할 때 어플리케이션 이름을 가지고 식별하는게 아닌 이 패키지 이름을 가지고 식별함-->
+
+    <!--<application.. 안의 내용은 안드로이드가 이 앱을 폰에 설치할때
+        설치되는 앱의 구성요소를 안드로이드가 파악하기 위한거
+        안드로이드가 이 내용들을 보고 이 앱을 어떻게 실행할지 판단함-->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--이 아래(<activity .. ) 테그만큼 화면의 수가 결정됨
+            MainActivity라고 반드시 이게 실행될거라 생각하면 안됨, 사용자의 이벤트에 따라 다른 액티비티가 실행될수있음
+            아 이어플리케이션에서는 실행될 수 있는 화면이 몇개가 있구나로 해석하면 됨
+        -->
+        <!--화면 1번째-->
+        <activity android:name=".MainActivity"> <!--.이 붙는 이유는 위에 선언된 package="com.example.administrator.myapplication" 경로가 앞에 생략되어있기 때문에 .은 이 패키지 밑이라는 의미다-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />  <!--MAIN이다 제일처음 실행하는 화면이다-->
+                <category android:name="android.intent.category.LAUNCHER" /> <!--LAUNCHER이다 안드로이드의 앱을 설치할때 아이콘이 나오는데 그 아이콘을 눌렀을 때 실행되는 놈이다-->
+            </intent-filter>
+        </activity>
+        <!--화면 2번째-->
+        <activity android:name=".SecondActivity"> <!--지금 상태에서 누군가가 이놈을 띄워주어야 실행 가능( 예 MainActivity에서 띄우기 ), 이렇게 안할거면 위에  <intent-filter>.. 같은거 추가 작성함-->
+
+        </activity>
+
+    </application>
+
+</manifest>
