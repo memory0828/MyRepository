@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 public class Light {
     private Bitmap image; //그림에 대한 데이터를 직접 가지고있는 비트맵데이터
-    private Bitmap imageLarge;
+    private Bitmap imageLarge; //그림에 대한 데이터를 직접 가지고있는 비트맵데이터
     private String imageFileName; //그림파일에 대한 그림파일명
     private String imageLargeFileName; //그림파일에 대한 그림파일명
     private String title;

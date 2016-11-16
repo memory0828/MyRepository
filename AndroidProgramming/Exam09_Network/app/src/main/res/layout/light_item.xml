@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="인테리어 조명1"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="normal|bold"
             android:id="@+id/lightTitle" />
 
