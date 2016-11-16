@@ -8,6 +8,6 @@
 		"title":"${light.title}",
 		"content":"${light.content}"
 	}
-	<c:if test="${!status.last}">,</c:if> <%--마지막번째  실행하는 내용이 아니라면 ,(콤마)를 넣어줘라--%>  
+	<c:if test="${!status.last}">,</c:if> <%--마지막번째 실행하는 내용이 아니라면 ,(콤마)를 넣어줘라--%>  
 </c:forEach>
 ]
