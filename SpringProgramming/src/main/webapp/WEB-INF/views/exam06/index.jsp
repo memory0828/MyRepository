@@ -4,7 +4,12 @@
 <head>
 	<meta charset = "UTF-8">
 </head>
-<body>
+<body style="margin-top:5px; background-image: url(<%=pageContext.getServletContext().getContextPath()%>/resources/image/pattern01.jpg)" >
+	<div style="background-color: white; border-color: black; border-style: solid;">
+	<img alt="" src="<%=pageContext.getServletContext().getContextPath()%>/resources/image/spring.jpg">
+	</div>
+	<br>
+
 <b>Exam06 - 요청 처리 메소드의 매개 변수 타입</b><br/>
 큰 주제 : 매개변수에 뭐가 들어갈수있느냐?<br><br/>
 1) 개별 파라미터 값을 받을 수 있는 변수 선언<br/>

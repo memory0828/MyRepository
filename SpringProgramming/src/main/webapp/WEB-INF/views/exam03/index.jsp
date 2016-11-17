@@ -4,7 +4,11 @@
 <head>
 	<meta charset = "UTF-8">
 </head>
-<body>
+<body style="margin-top:5px; background-image: url(<%=pageContext.getServletContext().getContextPath()%>/resources/image/pattern01.jpg)" >
+	<div style="background-color: white; border-color: black; border-style: solid;">
+	<img alt="" src="<%=pageContext.getServletContext().getContextPath()%>/resources/image/spring.jpg">
+	</div>
+	<br>
 	Exam03
 	<hr/>
 	[회원 가입 폼]<br/>
