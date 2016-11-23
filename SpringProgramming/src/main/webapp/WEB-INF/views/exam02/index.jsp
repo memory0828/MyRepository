@@ -6,6 +6,7 @@
 </head>
 <body>
 	Exam02
+	<br><a href="/myapp/">index로</a>
 	<hr/>
 	<a href = "/myapp/exam02/join?mid=user1&mname=홍길동&mage=30">가입</a><br/>
 	<a href = "/myapp/exam02/login?id=user1&password=12345">로그인</a><br/>	

@@ -221,6 +221,7 @@ public class Exam06Controller {
 	
 	@RequestMapping("/method4DeleteCookie")
 	public String method4DeleteCookie(HttpServletResponse response){
+		//쿠기 지우기
 		//값은 중요치않음
 		Cookie cookie1 = new Cookie("mid","");
 		cookie1.setMaxAge(0); //0으로 삭제(메모리뿐만아니라 하드디스크의 쿠키까지도)
@@ -260,7 +261,7 @@ public class Exam06Controller {
 	
 	@RequestMapping("/method5RemoveObject")
 	public String method5RemoveObject(HttpSession session){
-		//HttpSession에서 객체 얻기
+		//HttpSession에서 객체 지우기
 		session.removeAttribute("member");
 		return "exam06/index";
 	}

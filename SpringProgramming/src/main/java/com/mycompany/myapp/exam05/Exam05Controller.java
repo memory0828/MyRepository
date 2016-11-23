@@ -64,7 +64,6 @@ public class Exam05Controller {
 		os.flush();
 		is.close(); // OutputStream은 톰캣이 관리하기 때문에 안 닫아도 된다.
 		os.close(); 
-		
 	}
 
 	

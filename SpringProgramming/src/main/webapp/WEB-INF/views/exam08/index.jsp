@@ -5,7 +5,9 @@
 	<meta charset = "UTF-8">
 </head>
 <body>
-<b>Exam08 - 리다이렉트</b><br/>
+	<b>Exam08 - 리다이렉트</b><br/>
+	<br><a href="/myapp/">index로</a>
+	<hr/>
 <b>인덱스</b><br/>
 1) <a href="/myapp/exam08/join">회원 가입 - 10/6</a><br/>
 2) <a href="/myapp/exam08/write">게시물 쓰기 - 10/6</a><br/>

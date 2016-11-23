@@ -5,8 +5,9 @@
 	<meta charset = "UTF-8">
 </head>
 <body>
-<b>Exam13 : JdbcTemplate을 이용한 DAO</b><br/>
-<hr/>
+	<b>Exam13 : JdbcTemplate을 이용한 DAO</b><br/>
+	<br><a href="/myapp/">index로</a>
+	<hr/>
 <b>인덱스</b><br/>
 	[설정]<br/>
 	- 스프링 설정 파일(servlet-context.xml)에 JdbcTemplate 설정<br/><br/>

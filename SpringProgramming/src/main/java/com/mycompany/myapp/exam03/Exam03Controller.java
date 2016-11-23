@@ -18,7 +18,7 @@ public class Exam03Controller {
 	public String index(){
 		logger.info("=========== index 요청처리");
 		return "exam03/index";
-	}	
+	}
 
 	@RequestMapping("/join")
 	public String join(Member member){

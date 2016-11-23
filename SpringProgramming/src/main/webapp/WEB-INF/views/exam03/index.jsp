@@ -10,6 +10,7 @@
 	</div>
 	<br>
 	Exam03
+	<br><a href="/myapp/">index로</a>
 	<hr/>
 	[회원 가입 폼]<br/>
 	<form action="/myapp/exam03/join">

@@ -5,9 +5,10 @@
 	<meta charset = "UTF-8">
 </head>
 <body>
-<b>Exam12 : 커넥션 풀 설정</b><br/>
-<hr/>
-<b>인덱스</b><br/>
+	<b>Exam12 : 커넥션 풀 설정</b><br/>
+	<br><a href="/myapp/">index로</a>
+	<hr/>
+	<b>인덱스</b><br/>
 	[공통]<br/>
 	- 메이븐 설정 파일 수정(Spring JDBC와 커넥션 풀 의존성 라이브러리 추가)<br/><br/>
 	
