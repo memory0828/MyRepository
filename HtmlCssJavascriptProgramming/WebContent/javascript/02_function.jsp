@@ -21,7 +21,7 @@
 	
 </head>
 <body>
-	데이타 타입
+	자바스크립트 함수
 	<br>JavaScript Functions
 	<br>http://www.w3schools.com/js/js_functions.asp
 	<br>

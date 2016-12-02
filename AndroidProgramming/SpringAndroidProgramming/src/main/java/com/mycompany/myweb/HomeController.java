@@ -27,7 +27,7 @@ public class HomeController {
 		logger.info("■CTL■ / 페이지 호출");
 		return "index";
 	}
-	
+
 	@RequestMapping("/lightlist")
 	public String lightlist(Model model) {
 		logger.info("■CTL■ lightlist 페이지 호출");
@@ -46,7 +46,7 @@ public class HomeController {
 		model.addAttribute("list", list); //el에 객체등록
 		return "lightList";
 	}
-
+	
 	@RequestMapping("/foodlist")
 	public String foodlist(Model model) {
 		logger.info("■CTL■ foodlist 페이지 호출");

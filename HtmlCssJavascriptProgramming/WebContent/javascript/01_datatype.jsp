@@ -8,7 +8,6 @@
 			margin:0px;
 			padding:0px;
 		}
-
 	</style>
 	<script type="text/javascript">
 		var v1 = 10;
